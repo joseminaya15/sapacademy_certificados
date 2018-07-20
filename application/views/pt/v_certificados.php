@@ -43,7 +43,7 @@
             <div class="container m-t-50 m-b-50">
                 <div class="col-md-9">
                     <div class="datos">
-                        <p>Bienvenido(a):</p>
+                        <p>Bem-vindo:</p>
                         <h2><?php echo $nombre.' '.$apellidos ?></h2>
                         <p>Pa&iacute;s: <?php echo $pais ?></p>
                         <p>E-mail: <?php echo $correo ?></p>
@@ -61,11 +61,8 @@
         </section>
         <footer class="section col-xs-12">
             <div class="container">
-                <div class="col-xs-12 p-0">
-                    <img src="<?php echo RUTA_IMG?>logo/logo_footer.svg">
-                </div>
                 <div class="col-xs-6 p-0 left">
-                    <p>&copy;Copyright 2018 Hewlett Packard Enterprise Development, L.P.</p>
+                    <p>&copy; 2018 SAP SE or an SAP affiliate company. All rights reserved.</p>
                 </div>
                 <div class="col-xs-6 p-0 right">
                     <ul>

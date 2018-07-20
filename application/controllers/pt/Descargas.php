@@ -27,12 +27,6 @@ class Descargas extends CI_Controller {
         $pdf  = '';
         $btn  = '';
         foreach ($username as $key) {
-            // $pdf = RUTA_ARCHIVOS.$key->certificados;
-            // if(isset($key->certificados)){
-            //     $btn = '<a onclick="openPDF(&quot;'.$pdf.'&quot;)"><i></i>Previsualizar</a>';
-            // }else {
-            //     $btn  = '<a onclick="openPDF(&quot;'.$pdf.'&quot;)" style="pointer-events: none;"><i></i>Previsualizar</a>';
-            // }
             $html .= '<div class="certificados">
                         <div class="contenido">
                             <img src="'.RUTA_IMG.'logo/pdf.png">
