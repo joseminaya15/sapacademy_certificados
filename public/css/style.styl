@@ -1,0 +1,1142 @@
+$regular = 'BentonSansRegular'
+$medium  = 'BentonSansMedium'
+$bold    = 'BentonSansBold'
+$color   = #FDB913
+flexCenter()
+	display flex
+	display -webkit-flex
+	align-items center
+flexStart()
+	display flex
+	display -webkit-flex
+	align-items start
+flexEnd()
+	display flex
+	display -webkit-flex
+	align-items flex-end
+transitionOpacity()
+	-webkit-transition opacity .3s linear
+	-moz-transition opacity .3s linear
+	-ms-transition opacity .3s linear
+	-o-transition opacity .3s linear
+	transition opacity .3s linear
+transitionWidth()
+	-webkit-transition width .3s linear
+	-moz-transition width .3s linear
+	-ms-transition width .3s linear
+	-o-transition width .3s linear
+	transition width .3s linear
+transitionMaxWidth()
+	-webkit-transition max-width .3s linear
+	-moz-transition max-width .3s linear
+	-ms-transition max-width .3s linear
+	-o-transition max-width .3s linear
+	transition max-width .3s linear
+transitionBgColor()
+	-webkit-transition background-color .3s linear
+	-moz-transition background-color .3s linear
+	-ms-transition background-color .3s linear
+	-o-transition background-color .3s linear
+	transition background-color .3s linear
+transitionTransform()
+	-webkit-transition transform .3s linear
+	-moz-transition transform .3s linear
+	-ms-transition transform .3s linear
+	-o-transition transform .3s linear
+	transition transform .3s linear
+absolute()
+	position absolute
+	top 0
+	left 0
+	right 0
+	bottom 0
+relative()
+	position relative
+	top 0
+	left 0
+	right 0
+	bottom 0
+flipCard()
+	-moz-backface-visibility hidden
+	-webkit-backface-visibility hidden
+	backface-visibility hidden
+	-webkit-transition -webkit-transform 500ms
+	-moz-transition -moz-transform 500ms
+	-o-transition -o-transform 500ms
+	transition transform 500ms
+	border-radius 5px
+	position absolute
+flipCardFront()
+	-webkit-transform perspective(600) rotateY(0)
+	-moz-transform perspective(600) rotateY(0)
+	-o-transform perspective(600) rotateY(0)
+	transform perspective(600) rotateY(0)
+flipCardBack()
+	-webkit-transform rotateY(-180deg)
+	-moz-transform rotateY(-180deg)
+	-o-transform rotateY(-180deg)
+	transform rotateY(-180deg)
+	z-index 900
+flipCardFrontHover()
+	-webkit-transform rotateY(180deg)
+	-moz-transform rotateY(180deg)
+	-o-transform rotateY(180deg)
+	transform rotateY(180deg)
+	-webkit-transform perspective(600) rotateY(180deg)
+	-moz-transform perspective(600) rotateY(180deg)
+	-o-transform perspective(600) rotateY(180deg)
+	transform perspective(600) rotateY(180deg)
+flipCardBackHover()
+	-webkit-transform rotateY(0)
+	-moz-transform rotateY(0)
+	-o-transform rotateY(0)
+	transform rotateY(0)
+	-webkit-transform perspective(600) rotateY(0)
+	-moz-transform perspective(600) rotateY(0)
+	-o-transform perspective(600) rotateY(0)
+	transform perspective(600) rotateY(0)
+	z-index 950
+body
+	margin 0
+	padding 0
+	overflow hidden
+	font-family $regular
+	color #FFFFFF
+	background-color #000000
+.js-flex--left
+	flexCenter()
+	justify-content flex-start
+	.mdl-checkbox
+		max-width 25px !important
+.js-terminos
+	span
+		cursor pointer
+	a
+		color #008FD3
+.js-header
+	position fixed
+	top 0
+	width 100%
+	background-color #000000
+	z-index 2
+	padding 15px 25px
+	transitionOpacity()
+	flexCenter()
+	img
+		width 100%
+		max-width 150px
+	&.js-header--configurator
+		padding 0
+		border-bottom 1px solid #FFFFFF
+		.js-header__bgcolor
+			flexCenter()
+			justify-content flex-end
+			width 100%
+			max-width 60px
+			.js-header__bgcolor--bar
+				height 60px
+				width 100%
+				max-width 20px
+				&:nth-child(1)
+					background-color rgba(240, 171, 0, 0.4)
+				&:nth-child(2)
+					background-color rgba(240, 171, 0, 0.7)
+				&:nth-child(3)
+					background-color rgba(240, 171, 0, 1)
+#configurator
+	position relative
+	height 100vh
+.js-header--logo
+	flexCenter()
+	width 100%
+	max-width 300px
+	padding 15px 25px
+	img
+		width 100%
+		max-width 60px
+		margin-right 10px
+	p
+		margin 0
+		font-size 18px
+.js-fondo__imagen
+	background url(../img/fondo/fondo-imagen.jpg) no-repeat center center
+	background-size cover
+	absolute()
+	&:AFTER
+		content ''
+		background-color #000000
+		opacity .2
+		absolute()
+.js-bar
+	height 100vh
+	width 25%
+	z-index 1
+	position absolute
+	right 0
+	top 0
+	justify-content flex-end
+	flexCenter()
+	.js-bar__children
+		height 100%
+		width 100%
+		max-width 120px
+		&:nth-child(1)
+			background-color rgba(240, 171, 0, 0.4)
+		&:nth-child(2)
+			background-color rgba(240, 171, 0, 0.7)
+		&:nth-child(3)
+			background-color rgba(240, 171, 0, 1)
+.js-window
+	absolute()
+	flexCenter()
+	transitionOpacity()
+	width 100%
+	height 100vh
+	z-index 5
+.js-title
+	z-index: 5
+	color #FFFFFF
+	width 100%
+	max-width 685px
+	margin-left 75px
+	h1
+		font-size 60px
+		font-family $medium
+		strong
+			font-family $bold
+	p
+		font-size 26px
+		line-height 34px
+		margin 0
+.js-idioma
+	flexCenter()
+	justify-content flex-end
+	width 100%
+	.btn-group
+		width 100% !important
+		max-width 120px;
+		button
+			background-color transparent !important
+			color #FFFFFF !important
+			border none
+			box-shadow none !important
+			outline 0 !important
+.js-wizard
+	width 100%
+	position relative
+	max-width 200px
+	.js-step
+		flexCenter()
+		flex-wrap wrap
+		justify-content flex-end
+		span
+			transitionBgColor()
+			border 2px solid #FFFFFF
+			border-radius 50%
+			line-height 16px
+			width 100%
+			max-width 30px
+			padding 5px 8px
+			text-align center
+			margin 0 5px
+			font-family $bold
+			background-color #000000
+			&.active
+				background-color $color
+				border-color $color
+	.js-progress
+		position absolute
+		top 14px
+		width 100%
+		height 3px
+		border-radius 5px
+		background-color #FFFFFF
+		z-index -5
+		span
+			position absolute
+			height 3px
+			background-color $color
+			border-radius 5px
+.js-button-next
+	position fixed
+	bottom 0
+	left 0
+	right 0
+	text-align center
+	z-index 2
+	&.js-fixed--top
+		bottom 100px
+	button
+		background-color transparent !important
+		box-shadow none !important
+		min-width 50px !important
+		width 50px !important
+		height 60px !important
+		&.down
+			-webkit-animation js-buttonscroll--animate 1.5s infinite
+			animation js-buttonscroll--animate 1.5s infinite
+		&.active
+			i
+				-webkit-animation js-ripple--animate 1.5s infinite
+				animation js-ripple--animate 1.5s infinite
+		i
+			font-size 50px
+			color #FFFFFF
+			line-height 52px
+			flexCenter()
+.js-minilogo
+	position absolute
+	left 60px
+	bottom 40px
+	img
+		transitionMaxWidth()
+		width 100%
+		max-width 155px
+	&.js-minilogo__right
+		flexEnd()
+		justify-content flex-end
+		left inherit
+		right 50px
+		width 100%
+		height 100%
+		z-index -1
+		img
+			max-width 250px
+.js-container
+	transitionMaxWidth()
+	flexStart()
+	width 100%
+	max-width 1350px
+	height 100vh
+	justify-content center
+	margin auto
+	flex-direction column
+	position relative
+	padding 50px
+.js-window1
+	h2
+		color #FFFFFF
+		font-size 70px
+		line-height 68px
+		margin 5px 0
+		strong
+			background linear-gradient(to right, #EFAB1F 0%, #E35500 100%)
+			-webkit-background-clip text
+			-webkit-text-fill-color transparent
+.js-card__flex
+	flexStart()
+	width 100%
+.js-card
+	width 100%
+	max-width 180px
+	margin 20px auto
+	.js-card-imagen
+		position relative
+		width 100%
+		max-width 180px
+		height 180px
+		.js-card-flip
+			flipCard()
+			width 100%
+			height 100%
+			&.js-card-flip__front
+				flipCardFront()
+				flexCenter()
+				justify-content center
+				border 1px solid $color
+				img
+					width initial
+			&.js-card-flip__back
+				flipCardBack()
+				flexCenter()
+				background-color $color
+				flex-direction column
+				align-items start
+				justify-content flex-end
+				padding 20px
+				h2
+					color #000000
+					margin 0
+					font-size 36px
+					line-height 38px
+					font-family $medium
+				p
+					margin 0
+					color #000000
+					font-family $medium
+					font-size 16px
+					line-height 20px
+				button
+					box-shadow none
+					margin-top 15px
+					text-transform initial
+					font-family $bold
+					height 30px
+					line-height 20px		
+		&:hover
+			.js-card-flip__front
+				flipCardFrontHover()
+			.js-card-flip__back
+				flipCardBackHover()
+		&.js-card-imagen__static
+			.js-card-flip__front
+				flipCardFrontHover()
+			.js-card-flip__back
+				flipCardBackHover()
+				button
+					transitionBgColor()
+					background-color #000000
+					color $color
+					border-radius 5px
+.js-card-content
+	padding 20px 5px 20px 0
+	p
+		color #FFFFFF
+		font-size 16px
+		line-height 20px
+		margin 0
+.js-question--title
+	font-size 18px
+	margin-bottom 10px
+.js-question--number
+	font-size 32px
+	line-height 34px
+	margin-bottom 10px
+	h2
+		color $color
+		margin 3px 0
+		font-size 26px
+.js-card--large
+	-webkit-transition width 0.3s linear, margin 0.3s linear, opacity 0.1s linear, transform .3s linear
+	-moz-transition width 0.3s linear, margin 0.3s linear, opacity 0.1s linear, transform .3s linear
+	-ms-transition width 0.3s linear, margin 0.3s linear, opacity 0.1s linear, transform .3s linear
+	-o-transition width 0.3s linear, margin 0.4s linear, opacity 0.1s linear, transform .3s linear
+	transition width 0.3s linear, margin 0.3s linear, opacity 0.1s linear, transform .3s linear
+	width 100%
+	max-width 205px
+	margin 10px
+	flex none
+	position relative
+	&.js-card--large__flex
+		margin 10px auto
+	.js-card--large__content
+		border 1px solid $color
+		border-radius 10px
+		padding 5px 10px
+		text-align center
+		&.js-card--large__flip
+			position relative
+			width 100%
+			height 200px
+			border-color transparent
+			padding 0
+			.js-card-flip
+				flipCard()
+				width 100%
+				height 100%
+				&.js-card-flip__front
+					flipCardFront()
+					flexCenter()
+					flex-direction column
+					justify-content center
+					border 1px solid $color
+					img
+						width initial
+					.js-card--large__icon
+						position absolute
+						left 5px
+						top 5px
+						i
+							color #FFFFFF
+				&.js-card-flip__back
+					flipCardBack()
+					flexCenter()
+					background-color $color
+					padding 20px
+					.js-card--large__icon
+						position absolute
+						left 5px
+						top 5px
+						i
+							color #000000
+					p
+						margin 0
+						color #000000
+						font-family $medium
+						font-size 16px
+						line-height 20px
+			&:hover
+				.js-card-flip__front
+					flipCardFrontHover()
+				.js-card-flip__back
+					flipCardBackHover()
+		.js-card--large__content-imagen
+			flexCenter()
+			justify-content center
+			height 120px
+			img
+				width 100%
+				max-width 95px
+		.js-card--large__content-text
+			height 150px
+			p
+				font-size 17px
+				text-align left
+				line-height 21px
+				strong
+					color $color
+					font-family $medium
+			.form-group
+				textarea
+					background-color transparent
+					border-radius 0
+					border 1px solid #FFFFFF
+					color #FFFFFF
+		.js-card--large__content-tipo
+			flexEnd()
+			height 145px
+			justify-content center
+			img
+				width initial
+		.js-card--large__content-name
+			flexEnd()
+			justify-content center
+			margin 12px 0 10px 0
+			height 32px
+			small
+				font-size 16px
+				line-height 18px	
+	.js-card--large__button
+		padding 10px 0
+		button
+			border 1px solid $color
+			background-color transparent
+			color #FFFFFF
+			text-transform initial
+			width 100%
+			border-radius 0
+			font-family $medium
+			font-size 18px
+			&:hover
+				transitionBgColor()
+				background-color $color
+	.js-card--large__select
+		flexCenter()
+		transitionBgColor()
+		height 36px
+		justify-content center
+		border 1px solid $color
+		margin 10px 0
+		#textOperar
+			font-family $medium
+			font-size 16px
+			width 100%
+			max-width 115px
+			text-align center
+		.mdl-button--icon
+			i
+				color #FFFFFF
+		.js-select
+			.bootstrap-select
+				width 205px !important
+				background-color transparent
+				border 1px solid $color
+				color #FFFFFF
+				outline none !important
+				.dropdown-toggle
+					background-color transparent !important
+					color #FFFFFF
+					border none
+					outline 0 !important
+					box-shadow none !important
+					.filter-option
+						font-size 16px
+						text-align center
+				.dropdown-menu
+					background-color #000000 !important
+					margin 0
+					padding 0
+					border none
+					li
+						border 1px solid $color
+						margin 5px 0
+						a
+							transitionBgColor()
+							text-align center
+							color #FFFFFF
+							font-size 15px
+							outline none
+							font-family $medium
+							background-color transparent
+							height 34px
+							line-height 30px
+							&:hover
+								background-color $color
+		&.js-selected
+			background-color $color
+.js-card--menu
+	position absolute
+	top 10px
+	right 10px
+.js-card-confirmacion
+	transitionMaxWidth()
+	width 100%
+	max-width 400px
+	border-radius 10px
+	border 1px solid $color
+	padding 25px
+	margin 5px
+.js-formulario
+	transitionMaxWidth()
+	width 100%
+	max-width calc(100% - 420px)
+	border-radius 10px
+	border 1px solid $color
+	padding 25px
+	margin 5px
+	.col-sm-6
+		padding 0 5px
+	.js-contacto
+		font-size 14px
+		margin 5px 0
+		line-height 18px
+	.mdl-radio__outer-circle
+		border 2px solid #FFFFFF
+		border-radius 0
+	.mdl-radio
+		font-size 13px
+		font-family $regular
+		font-weight 100
+.js-contenedor-respuestas
+	overflow-y scroll
+	height 295px
+	.js-respuestas
+		flexCenter()
+		background-color #FFFFFF
+		color #000000
+		margin 5px 0
+		padding 8px 5px 8px 15px 
+		ul
+			transitionMaxWidth()
+			max-width calc(100% - 85px)
+			width 100%
+			margin 0
+			padding-left 15px
+			li
+				font-size 15px
+		button
+			transitionBgColor()
+			color #4983B6
+			text-transform initial
+			font-size 15px
+			box-shadow none
+			height 30px
+			line-height 32px
+			background-color transparent
+			font-family $bold
+			&:hover
+				background-color #4983B6
+				color #FFFFFF
+.js-datos
+	flexCenter()
+	padding 5px
+	.js-datos__personal
+		background-color #F6F6F6
+		color #000000
+		padding 7px 10px
+		p
+			flexCenter()
+			margin 0
+			i
+				margin-right 5px
+				color #4983B6
+				font-size 18px
+	.js-datos__separacion
+		padding 7px 10px
+		p
+			margin 0
+	.js-datos__linkedin
+		a
+			background-color #008FD3
+			font-size 16px
+			text-decoration none !important
+			color #FFFFFF !important
+			padding 10px
+			position relative
+			padding-left 45px
+			i
+				background-color #0076B3
+				font-size 20px
+				position absolute
+				top: 0; 
+				left 0;
+				padding 10px
+.js-input
+	margin 5px 0
+	.form-control
+		border-radius 0
+		height 46px
+		padding 6px 15px
+		font-size 15px
+		font-family $regular
+.js-select
+	&.js-standar
+		margin 5px 0
+		.bootstrap-select
+			width 100% !important
+			.btn-default
+				background-color #FFFFFF
+				color #757575
+				height 46px
+				border-radius 0	
+.js-contact-label
+	flexCenter()
+	flex-wrap wrap
+	.js-input-label
+		width 100%
+		max-width 120px
+.js-label
+	height 145px
+	margin 5px 0
+	span
+		font-family $bold
+		a
+			color #008FD3 !important
+	.mdl-checkbox__label
+		font-size 14px
+		color #000000
+		line-height 18px
+		font-family $regular
+		font-weight 100
+.bgcolorblack
+	background-color #000000
+	height 40px
+	bottom 0
+	content ''
+	width calc(50% - 30px)
+	position absolute
+	&.right
+		right 0
+	&.left
+		left 0
+.mdl-radio__inner-circle
+	background #4983B6
+.mdl-checkbox
+	&.is-checked 
+		.mdl-checkbox__tick-outline
+			background #4983B6
+.mdl-checkbox__ripple-container 
+	&.mdl-ripple
+		background #4983B6
+.mdl-radio__ripple-container 
+	.mdl-ripple
+		background #4983B6
+.mdl-checkbox
+	&.is-checked 
+		.mdl-checkbox__box-outline
+			border 2px solid #4983B6
+.mdl-radio
+	&.is-checked 
+		.mdl-radio__outer-circle
+			border 2px solid #4983B6
+.js-checkbox
+	.mdl-checkbox
+		max-width 250px
+	.mdl-checkbox__label
+		font-size 15px
+		line-height 18px
+		font-weight 100
+	.mdl-checkbox__box-outline
+		border 2px solid #FFFFFF
+.js-formulario
+	.js-checkbox
+		padding 0 5px
+.js-button--confirmar
+	background-color #008FD3 !important
+	color #FFFFFF
+	text-transform initial
+	font-family $bold
+	height 30px
+	line-height 32px
+.js-card-confirmacion
+	h2
+		color #FFFFFF
+		font-size 30px
+		margin 0 0 7px 0
+		strong
+			background linear-gradient(to right, #EFAB1F 0%, #E35500 100%)
+			-webkit-background-clip text
+			-webkit-text-fill-color transparent
+			font-family $bold
+.js-agradecimiento
+	max-width 650px
+	margin auto
+	text-align center
+	h2
+		font-family $bold
+		color $color
+		font-size 60px
+		margin-bottom 20px
+	p
+		font-size 28px
+		line-height 32px
+.opacity-done
+	absolute()
+	opacity 0
+	z-index -5
+	&.fadeInUp
+	&.fadeInDown
+		z-index 1
+.js-button-select
+	transitionBgColor()
+	&.js-selected
+	&:hover
+		background-color $color !important
+.js-card__flex--relative
+	position relative
+	flex-wrap wrap
+	height 100%
+	max-height 285px
+.js-card--large__tipo
+	transitionTransform()
+	transform translate3d(-100%, 0, 0)
+	opacity 0
+	margin 0
+	z-index -5
+	width 0 !important
+.js-card--transform
+	transitionTransform()
+	-webkit-transform translate3d(0px, 0px, 0px) !important
+	-moz-transform translate3d(0px, 0px, 0px) !important
+	-ms-transform translate3d(0px, 0px, 0px) !important
+	-o-transform translate3d(0px, 0px, 0px) !important
+	transform translate3d(0px, 0px, 0px) !important
+.js-card--tipo
+	flexCenter()
+	width 100%
+	&.js-card--show
+		max-width 240px
+		width 100%
+.js-card--empresa
+	flexCenter center()
+	position relative
+	align-items flex-start
+	&.fadeInLeft
+		opacity 1
+		z-index 5
+.js-disabled
+	opacity .3
+	pointer-events none
+.js-carousel
+	position relative
+	width 100%
+	max-width 1000px
+// .owl-carousel
+// 	.owl-item
+// 		width 100%
+// 		max-width 250px
+.owl-theme 
+	.owl-nav
+		flexCenter()
+		position absolute
+		top 50%
+		left 50%
+		-webkit-transform translate(-50% , -50%)
+		-moz-transform translate(-50% , -50%)
+		-ms-transform translate(-50% , -50%)
+		-o-transform translate(-50% , -50%)
+		transform translate(-50% , -50%)
+		z-index 0
+		width 100%
+		.owl-prev
+			position absolute
+			left 0
+			margin-left -40px
+			background-color $color
+			&:hover
+				background-color $color
+		.owl-next
+			position absolute
+			right 0
+			margin-right -20px
+			background-color $color
+			&:hover
+				background-color $color
+.js-chat
+	width 100%
+	max-width 150px
+	background-color #008FD3
+	color #FFFFFF
+	position fixed
+	width 100%
+	top 75px
+	right 60px
+	padding 2px 5px
+	z-index 4
+	margin auto
+	text-align center
+	border-radius 10px
+	a
+		width 100%
+		display inline-block
+		vertical-align middle
+		color #FFFFFF
+		text-decoration none
+		img
+			max-width 37px
+			width 100%
+		label
+			font-weight 100
+			cursor pointer
+.dnone
+	display none !important
+.slick-slide
+	text-align center
+.js-carousel
+	&.js-5cards
+		max-width 1250px
+	&.js-3cards
+		max-width 750px
+	&.js-cards
+		max-width 800px
+.modal
+	&.fade
+		.modal-dialog
+			transform translate(-50% , -50%)
+			position absolute
+			top 50%
+			left 50%
+			.mdl-card__actions
+				padding 16px
+				button
+					text-transform initial
+					font-family $medium
+		&.in
+			.modal-dialog
+				transform translate(1)
+				transform transform(-50% , -50%)
+				opacity 1
+/*ANIMACIONES*/
+@-webkit-keyframes js-buttonscroll--animate
+	0%
+		-webkit-transform translateY(10px)
+	30%
+		-webkit-transform translateY(-20px)
+	60%
+		-webkit-transform translateY(15px)
+@keyframes js-buttonscroll--animate
+	0%
+		-webkit-transform translateY(10px)
+	30%
+		-webkit-transform translateY(-20px)
+	60%
+		-webkit-transform translateY(15px)
+@-webkit-keyframes js-ripple--animate
+	0%
+		-webkit-transform translateY(-25px)
+		opacity 0
+	50%
+		opacity 1
+	100%
+		-webkit-transform translateY(20px)
+		opacity 0
+@keyframes js-ripple--animate
+	0%
+		-webkit-transform translateY(-25px)
+		opacity 0
+	50%
+		opacity 1
+	100%
+		-webkit-transform translateY(20px)
+		opacity 0
+/*SCROLL*/
+::-webkit-scrollbar
+	width 8px
+	height 5px
+::-webkit-scrollbar-track
+	background-color transparent
+	border-radius 10px
+::-webkit-scrollbar-thumb
+	background-color #AAAAAA
+	border-radius 10px
+@media ( max-width 1400px ) and ( max-height 720px )
+	.js-minilogo 
+		img
+			max-width 100px
+	.js-container
+		padding-top 80px
+	.js-button-next
+		&.js-fixed--top
+			bottom 10px
+@media ( max-width: 1400px )
+	.js-carousel
+		max-width 750px
+@media ( max-width: 1200px )
+	.js-carousel
+		max-width 500px
+		&.js-5cards
+			max-width 1000px
+	.js-minilogo
+		left 30px 
+		&.js-minilogo__right
+			img
+				max-width 155px
+		img
+			max-width 100px
+	.js-window5
+		.js-container
+			height 100%
+			overflow-y scroll
+			display inherit
+			padding 75px 20px
+			.js-card__flex
+				display inherit
+				.js-formulario
+				.js-card-confirmacion
+					float left
+				.js-formulario
+					max-width 100%
+	.js-title
+		max-width 550px
+		margin-left 30px
+		h1
+			font-size 50px
+			line-height 50px
+		p
+			font-size 24px
+			line-height 28px
+	.owl-theme 
+		.owl-nav
+			.owl-prev
+				margin-left -20px
+	.js-chat
+		max-width 60px
+		padding 8px
+		right 15px
+		bottom 15px
+		top initial
+		label
+			display none
+@media ( max-width: 1000px )
+	.js-carousel
+		&.js-5cards
+			max-width 750px
+@media ( max-width: 768px )
+	.js-minilogo 
+		&.js-minilogo__right
+			img
+				display none
+	.js-title
+		max-width 420px
+		h1
+			font-size 42px
+			line-height 44px
+		p
+			font-size 20px
+			line-height 24px
+	.js-card--large
+		margin 10px auto
+	.js-carousel
+		&.js-5cards
+		&.js-3cards
+			max-width 500px
+		&.js-cards
+			max-width 500px
+@media ( max-width: 600px )
+	.js-container
+		align-items center
+		justify-content flex-start
+		overflow-y scroll
+		height 100%
+		padding 100px 20px
+	// .js-carousel
+	// 	max-width 260px
+	// 	margin 0 auto
+	.js-title
+		max-width 240px
+		margin-left 20px
+		h1
+			font-size 32px
+			line-height 34px
+		p
+			font-size 16px
+			line-height 20px
+	.js-minilogo
+		left 20px
+		img
+			max-width 75px
+	.js-window1 
+		h2
+			font-size 40px
+			line-height 42px
+	.js-question--title
+		margin-bottom 5px
+	.js-question--number
+		text-align center
+		font-size 32px
+		line-height 34px
+		margin 0
+		h2
+			font-size 24px
+			line-height 26px
+	.owl-theme 
+		.owl-nav
+			.owl-prev
+				margin-left 0
+			.owl-next
+				margin-right 0
+	.js-card--show
+		.owl-carousel 
+			.owl-stage-outer
+				overflow initial
+	.js-chat
+		right 10px
+		bottom 10px
+		padding 5px
+		max-width 50px
+		img
+			max-width 40px
+	.js-header--logo
+		padding 10px 0 10px 20px
+		max-width 210px
+		p
+			font-size 13px
+			line-height 16px
+	.js-header
+		&.js-header--configurator 
+			.js-header__bgcolor
+				max-width 30px
+	.js-card--empresa
+		display block
+		margin auto
+		padding-bottom 50px
+	.js-datos
+		flex-wrap wrap
+		.js-datos__personal
+			margin 5px 0
+		.js-datos__separacion
+			margin 5px 0
+		.js-datos__linkedin
+			margin 10px 0 5px 0
+	.js-wizard
+		max-width 200px
+		.js-step
+			span
+				position absolute
+				display none
+				&.active
+					display inline-block
+					background-color $color
+					border-color $color
+		.js-progress
+			display none
+@media ( max-width: 480px )
+	.js-carousel
+		&.js-3cards
+			max-width 250px	
+			margin auto
+	// .owl-carousel
+	// 	.owl-item
+	// 		width 100%
+	// 		max-width 250px
+					
