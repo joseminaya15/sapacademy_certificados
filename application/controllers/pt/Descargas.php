@@ -47,7 +47,7 @@ class Descargas extends CI_Controller {
                     </div>';
         }
         $data['html'] = $html;
-		$this->load->view('v_certificados', $data);
+		$this->load->view('pt/v_certificados', $data);
 	}
     function cerrarSesion(){
         $data['error'] = EXIT_ERROR;

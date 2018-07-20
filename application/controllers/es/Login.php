@@ -19,7 +19,7 @@ class Login extends CI_Controller {
 	    $this->session->unset_userdata('Apellidos');
 	    $this->session->unset_userdata('Pais');
 	    $this->session->unset_userdata('Id');
-		$this->load->view('v_login');
+		$this->load->view('es/v_login');
 	}
 
 	function ingresar() {
