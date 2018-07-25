@@ -18,55 +18,35 @@
         <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>mdl/material.min.css?v=<?php echo time();?>">
         <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>font-awesome.min.css?v=<?php echo time();?>">
         <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>material-icons.css?v=<?php echo time();?>">
-        <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>metric.css?v=<?php echo time();?>">
+        <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>benton.css?v=<?php echo time();?>">
         <link rel="stylesheet"    href="<?php echo RUTA_CSS?>m-p.min.css?v=<?php echo time();?>">
-        <link rel="stylesheet"    href="<?php echo RUTA_CSS?>index.css?v=<?php echo time();?>">
-        <link rel="stylesheet"    href="<?php echo RUTA_CSS?>login.css?v=<?php echo time();?>">
+        <link rel="stylesheet"    href="<?php echo RUTA_CSS?>style.css?v=<?php echo time();?>">
     </head>
     <body>
-        <section class>
-            <div class="fondo-imagen"></div>
-            <div class="header">
-                <div class="mdl-container row">
-                    <div class="col-xs-12">
-                        <div class="col-xs-6 text-left p-0">
-                            <img src="<?php echo RUTA_IMG?>logo/logo_header.png">
-                        </div>
-                    </div>
+        <div class="js-header">
+            <div class="js-header--container">
+                <div class="js-header--left">
+                    <img class="logo-one" src="<?php echo RUTA_IMG?>logo/logo_favicon.png">
+                    <p>SAP Marketing Academy</p>
                 </div>
             </div>
-            <div class="center-login">
-                <div class="mdl-card mdl-card-login">
-                    <div class="mdl-card__title">
-                        <h2>Bem-vindo ao Portal de Certificados</h2>
-                        <h2 class="title">SAP Marketing Academy</h2>
-                        <p class="subtitle">Agradecemos por sua participação. Lembre-se de que nossos certificados são reconhecidos internacionalmente e darão a você uma grande vantagem competitiva.</p>
-                    </div>
-                    <div class="mdl-card__supporting-text p-t-0">
-                        <h2><strong>Obter certificado</strong></h2>
-                        <p class="subtitle">Insira seu e-mail para acessar seu certificado:</p>
+        </div>
+        <section id="principal">
+            <div class="js-fondo"></div>
+            <div class="js-container">
+                <div class="js-home js-height js-flex">
+                    <div class="js-contenido">
+                        <p>Bem-vindo ao Portal de Certificados</p>
+                        <h2>SAP Marketing Academy</h2>
+                        <p>Agradecemos por sua participação. Lembre-se de que nossos certificados são reconhecidos internacionalmente e darão a você uma grande vantagem competitiva.</p>
+                        <h3>Obter certificado</h3>
+                        <p>Insira seu e-mail para acessar seu certificado:</p>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira seu e-mail" onkeyup="verificarDatos(event);">
-                    </div>
-                    <div class="mdl-card__actions p-0">
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="ingresar()">Inserir</button>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="ingresar()">Ingresar</button>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- <footer class="section col-xs-12">
-            <div class="container">
-                <div class="col-xs-6 p-0 left">
-                    <p>&copy; 2018 SAP SE or an SAP affiliate company. All rights reserved.</p>
-                </div>
-                <div class="col-xs-6 p-0 right">
-                    <ul>
-                        <li>Terms of use</li>
-                        <li>Privacy</li>
-                        <li>Report Bug</li>
-                    </ul>
-                </div>
-            </div>
-        </footer> -->
         <script src="<?php echo RUTA_JS?>jquery-3.2.1.min.js?v=<?php echo time();?>"></script>
         <script src="<?php echo RUTA_JS?>jquery-1.11.2.min.js?v=<?php echo time();?>"></script>
         <script src="<?php echo RUTA_PLUGINS?>bootstrap/bootstrap.min.js?v=<?php echo time();?>"></script>

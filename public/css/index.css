@@ -1,57 +1,6 @@
-body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    overflow-y: scroll;
-    font-family: 'MetricRegular';
-    background-color: #FFFFFF;
-}
-label {
-    font-weight: 100;
-}
 .section {
     position: relative;
     padding: 20px;
-}
-.center-login {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    margin: auto;
-    -webkit-transform: translate(-50%, -50%);
-    -webkit-transition: transform .2s linear;
-    -moz-transition: transform .2s linear;
-    -ms-transition: transform .2s linear;
-    -o-transition: transform .2s linear;
-    transition: transform .2s linear;
-}
-.header {
-    background-color: #415564;
-    padding: 10px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-}
-.header img {
-    width: 100%;
-    max-width: 120px;
-    margin-bottom: 5px;
-}
-.header a {
-    color: #4fc0a6;
-    font-family: 'MetricSemiBold';
-}
-.header p {
-    font-size: 28px;
-    color: #fff;
-    font-family: 'MetricSemiBold';
-    margin-top: 10px;
-    font-size: 20px;
-    text-decoration: none;
-    cursor: pointer;
 }
 .header .tipo-user {
     font-size: 18px;
@@ -189,7 +138,7 @@ label {
     font-family: MetricSemiBold;
     margin-top: 12px;
 }
-footer {
+/*footer {
     background-color: #d1d3d5;
 }
 footer img {
@@ -211,4 +160,4 @@ footer ul li {
 }
 footer .right{
     text-align: right;
-}
+}*/

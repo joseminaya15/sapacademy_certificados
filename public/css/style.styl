@@ -1,0 +1,163 @@
+$light     = 'BentonSansLight'
+$regular   = 'BentonSansRegular'
+$medium    = 'BentonSansMedium'
+$bold      = 'BentonSansBold'
+$color     = #F0AB00
+$default   = #008FD3
+flexCenter()
+	display flex
+	display -webkit-flex
+	align-items center
+flexStart()
+	display flex
+	display -webkit-flex
+	align-items start
+flexEnd()
+	display flex
+	display -webkit-flex
+	align-items flex-end
+transitionAll()
+	-webkit-transition all .3s linear
+	-moz-transition all .3s linear
+	-ms-transition all .3s linear
+	-o-transition all .3s linear
+	transition all .3s linear
+transitionOpacity()
+	-webkit-transition opacity .3s linear
+	-moz-transition opacity .3s linear
+	-ms-transition opacity .3s linear
+	-o-transition opacity .3s linear
+	transition opacity .3s linear
+transitionWidth()
+	-webkit-transition width .3s linear
+	-moz-transition width .3s linear
+	-ms-transition width .3s linear
+	-o-transition width .3s linear
+	transition width .3s linear
+transitionMaxWidth()
+	-webkit-transition max-width .3s linear
+	-moz-transition max-width .3s linear
+	-ms-transition max-width .3s linear
+	-o-transition max-width .3s linear
+	transition max-width .3s linear
+transitionBgColor()
+	-webkit-transition background-color .3s linear
+	-moz-transition background-color .3s linear
+	-ms-transition background-color .3s linear
+	-o-transition background-color .3s linear
+	transition background-color .3s linear
+transitionTransform()
+	-webkit-transition transform .3s linear
+	-moz-transition transform .3s linear
+	-ms-transition transform .3s linear
+	-o-transition transform .3s linear
+	transition transform .3s linear
+absolute()
+	position absolute
+	top 0
+	left 0
+	right 0
+	bottom 0
+relative()
+	position relative
+	top 0
+	left 0
+	right 0
+	bottom 0
+body
+	margin 0
+	padding 0
+	overflow hidden
+	overflow-y scroll
+	font-family $regular
+	color #000000
+	background-color #EFEFEF
+img
+	width 100%
+p
+	margin 0
+	font-size 18px
+.js-flex
+	flexCenter()
+	justify-content center
+.js-flex--start
+	flexStart()
+	justify-content center
+.js-height
+	height 100vh
+.js-fondo
+	absolute()
+	background url(../img/logo/fondo-login.jpg) no-repeat center center
+	background-size cover
+	width 100%
+	height 100vh
+	z-index -1
+.js-header
+	transitionAll()
+	position fixed
+	top 0
+	width 100%
+	background-color #000000
+	z-index 5
+	padding 5px 25px
+	color #FFFFFF
+	height 75px
+	.js-header--container
+		flexCenter()
+		height 100%
+		width 100%
+		max-width 1150px
+		margin auto
+	.js-header--left
+		flexCenter()
+		width 100%
+		max-width 300px
+		justify-content flex-start
+		img
+			width 100%
+			max-width 70px
+		p
+			font-family $bold
+	.js-header--right
+		flexCenter()
+		width 100%
+		justify-content flex-end
+		text-align right
+.js-container
+	transitionMaxWidth()
+	height 100%
+	width 100%
+	max-width 1150px
+	margin auto
+.js-contenido
+	text-align center
+	color #FFFFFF
+	max-width 800px
+	padding 20px
+	z-index 1
+	h2
+		font-size 55px
+		line-height 55px
+		font-family $bold
+		margin 10px 0
+	h3
+		font-size 26px
+		line-height 30px
+		font-family $bold
+		margin 15px 0
+	p
+		font-size 24px
+		line-height 28px
+	button
+		background-color $default !important
+		color #FFFFFF
+		text-transform initial
+		font-family $bold
+		font-size 18px
+		border-radius 10px
+		padding 0 30px
+		margin 10px
+	input
+		margin 20px auto
+		width 100%
+		max-width 400px
