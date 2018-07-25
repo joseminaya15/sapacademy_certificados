@@ -37,13 +37,16 @@ class Certificado extends CI_Controller {
 								padding-top: 150px;
 							}
 							.js-information{
-								text-align: center;
+								text-align: left;
 								padding-top: 20px;
 							}
 							.js-information h2{
-								font-size: 40px;
+								font-size: 80px;
+								line-height: 80px;
+								margin: 5px 0;
 								font-family: "Roboto",sans-serif;
-								font-weight: 100;
+								font-weight: bold;
+								color: #000000;
 							}
 							.js-information p{
 								font-size: 20px;
@@ -52,9 +55,22 @@ class Certificado extends CI_Controller {
 								color: #231F20;
 							}
 							.js-information h3{
-								font-size: 42px;
+								font-size: 36px;
+								line-height: 38px;
 								font-family: "Roboto",sans-serif;
 								font-weight: bold;
+								color: #939598;
+								margin: 10px 0;
+							}
+							.js-information--curso h3{
+								font-size: 32px;
+								line-height: 34px;
+								margin: 10px 0;
+							}
+							.js-information--curso p{
+								font-size: 20px;
+								line-height: 22px;
+								margin: 5px 0;
 							}
 							.js-information span{
 								font-size: 14px;
@@ -69,23 +85,25 @@ class Certificado extends CI_Controller {
 						<div class="fondo-imagen">
 							<img style="width: 100%;" src="http://hpedigitalmarketingacademy.com/Certificados/public/img/fondo/fondo.png"/>
 						</div>
-						<div class="js-logo"><img width="180" src="http://hpedigitalmarketingacademy.com/Certificados/public/img/logo/logo-footer.png"/></div>
 						<div class="js-information">
-							<h2 style="font-family: "MetricRegular";">Certificado de Participación</h2>
-							<p>Por el presente certificamos que</p>
+							<h2>Certificado</h2>
+							<h3>SAP Marketing Academy</h3>
+							<p>SAP hace constar que:</p>
 							<h3>'.$nombre.' '.$Apellidos.'</h3>
-							<div width="360" style="margin:auto;">
-								<p>ha completado satisfactoriamente el<br> <strong>HPE Digital Marketing Academy</strong> compuesto por 10 workshops dictados bajo la modalidad de webinar y ahora cuenta con los conocimientos esenciales para desarrollar campañas de Marketing Digital.</p>
-							</div><br><br>
-							<img width="250" style="border-bottom: 1px solid #757575;" src="http://hpedigitalmarketingacademy.com/Certificados/public/img/fondo/firma.jpg"/><br><br>
-							<span>Gabriella Guazzo</span><br>
-							<span>EG Geography Marketing Manager Latin America</span><br>
-							<span>Hewlett Packard Enterprise</span><br><br>
-							<span>Junio, 2018</span><br>
+							<div class="js-information--curso">
+								<p>Ha participado de</p>
+								<h3>Marketing Mix Modeling</h3>
+								<p>Julio del 2018</p>
+							</div>
+							<div class="js-information--firma">
+								<img width="250" style="border-bottom: 1px solid #757575;" src="http://hpedigitalmarketingacademy.com/Certificados/public/img/fondo/firma.jpg"/><br><br>
+								<span>SAP Partner & SME</span><br>
+								<span>Marketing Latin America</span><br>
+							</div>
 						</div>
 					</body>
 				  </html>';
-		$mpdf  = new \Mpdf\Mpdf();
+		$mpdf = new \Mpdf\Mpdf(['orientation' => 'L']);
 		$mpdf ->writeHTML($html);
 		$mpdf ->output();
 	}

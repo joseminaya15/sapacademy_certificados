@@ -71,7 +71,7 @@ body
 	overflow-y scroll
 	font-family $regular
 	color #000000
-	background-color #EFEFEF
+	background-color #FFFFFF
 img
 	width 100%
 p
@@ -85,6 +85,9 @@ p
 	justify-content center
 .js-height
 	height 100vh
+.js-section
+	position relative
+	padding 30px 20px
 .js-fondo
 	absolute()
 	background url(../img/logo/fondo-login.jpg) no-repeat center center
@@ -92,6 +95,10 @@ p
 	width 100%
 	height 100vh
 	z-index -1
+	&.js-fondo-home
+		height 500px
+		position relative
+		background url(../img/logo/fondo-home.jpg) no-repeat center center
 .js-header
 	transitionAll()
 	position fixed
@@ -161,3 +168,48 @@ p
 		margin 20px auto
 		width 100%
 		max-width 400px
+#certificado
+	position relative
+.js-datos
+	padding 30px 0
+	border-bottom 1px solid #CCCCCC
+	h2
+		font-family $bold
+		font-size 32px
+		line-height 36px
+		margin 10px 0
+	p
+		margin 10px 0
+		color #767676
+		font-family $light
+.js-certificados
+	h3
+		font-size 24px
+		line-height 28px
+		font-family $medium
+	.js-certificados__contenido
+		flexCenter()
+		width 100%
+		max-width 600px
+		margin 15px 0
+		.js-certificados__contenido--left
+			flexCenter()
+			width 100%
+			justify-content flex-start
+			img
+				max-width 40px
+				margin-right 15px
+			p
+				font-family $light
+		.js-certificados__contenido--right
+			flexCenter()
+			width 100%
+			justify-content flex-end
+			a
+				color $default
+footer
+	background-color #E9E9E9
+	p
+		text-align center
+		font-size 14px
+		font-family $light
