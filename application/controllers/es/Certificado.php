@@ -82,9 +82,6 @@ class Certificado extends CI_Controller {
 						</style>
 					</head>
 					<body>
-						<div class="fondo-imagen">
-							<img style="width: 100%;" src="http://hpedigitalmarketingacademy.com/Certificados/public/img/fondo/fondo.png"/>
-						</div>
 						<div class="js-information">
 							<h2>Certificado</h2>
 							<h3>SAP Marketing Academy</h3>
@@ -96,7 +93,7 @@ class Certificado extends CI_Controller {
 								<p>Julio del 2018</p>
 							</div>
 							<div class="js-information--firma">
-								<img width="250" style="border-bottom: 1px solid #757575;" src="http://hpedigitalmarketingacademy.com/Certificados/public/img/fondo/firma.jpg"/><br><br>
+								<img width="250" style="border-bottom: 1px solid #757575;" src="http://www.sap-latam.com/SAP_Marketing_Academy/public/img/logo/firma.png"/><br><br>
 								<span>SAP Partner & SME</span><br>
 								<span>Marketing Latin America</span><br>
 							</div>
