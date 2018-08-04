@@ -14,15 +14,14 @@ class Descargas extends CI_Controller {
     }
 
 	public function index(){
-        if($this->session->userdata('correo') == null){
+        if($this->session->userdata('email') == null){
             header("location: Login");
         }
         $data['nombre']    = $this->session->userdata('Nombres');
-        $data['apellidos'] = $this->session->userdata('Apellidos');
-        $data['pais']      = $this->session->userdata('Pais') == null ? '-' : $this->session->userdata('Pais');
-        $data['correo']    = $this->session->userdata('correo') == null ? '-' : $this->session->userdata('correo');
+        $data['email']    = $this->session->userdata('email') == null ? '-' : $this->session->userdata('email');
         $data['empresa']   = $this->session->userdata('empresa') == null ? '-' : $this->session->userdata('empresa');
-        $username          = $this->M_correo->getDatosCorreos($this->session->userdata('correo'));
+        $data['pais']      = $this->session->userdata('pais') == null ? '-' : $this->session->userdata('pais');
+        $username          = $this->M_correo->getDatosCorreos($this->session->userdata('email'));
         $html = '';
         $pdf  = '';
         $btn  = '';
@@ -30,7 +29,7 @@ class Descargas extends CI_Controller {
             $html .= '<div class="js-certificados__contenido">
                         <div class="js-certificados__contenido--left">
                             <img src="'.RUTA_IMG.'logo/pdf.png">
-                            <p>Certificado de Marketing</p>
+                            <p>Certificado de Content Marketing</p>
                         </div>
                         <div class="js-certificados__contenido--right">
                             <a href="Certificado" target="_blank">Previsualizar</a>
@@ -44,7 +43,7 @@ class Descargas extends CI_Controller {
         $data['error'] = EXIT_ERROR;
         $data['msj']   = null;
         try {
-            $this->session->unset_userdata('correo');
+            $this->session->unset_userdata('email');
             $data['error'] = EXIT_SUCCESS;
         }catch (Exception $e){
             $data['msj'] = $e->getMessage();

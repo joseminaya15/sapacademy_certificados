@@ -14,11 +14,10 @@ class Login extends CI_Controller {
     }
 
 	public function index(){
-		$this->session->unset_userdata('correo');
+		$this->session->unset_userdata('email');
 	    $this->session->unset_userdata('Nombres');
-	    $this->session->unset_userdata('Apellidos');
-	    $this->session->unset_userdata('Pais');
-	    $this->session->unset_userdata('Id');
+	    $this->session->unset_userdata('pais');
+	    $this->session->unset_userdata('id');
 		$this->load->view('es/v_login');
 	}
 
@@ -26,16 +25,15 @@ class Login extends CI_Controller {
 		$data['error'] = EXIT_ERROR;
         $data['msj']   = null;
          try {
-			$correo   = $this->input->post('correo');
-			$username = $this->M_correo->getDatosCorreos($correo);
+			$email    = $this->input->post('email');
+			$username = $this->M_correo->getDatosCorreos($email);
 			if(count($username) != 0) {
-				if($username[0]->Email == $correo) {
-				$session = array('correo'    => $correo,
+				if($username[0]->email == $email) {
+				$session = array('email'     => $email,
 								 'Nombres'   => $username[0]->Nombres,
-								 'Apellidos' => $username[0]->Apellidos,
-								 'Pais' 	 => $username[0]->Pais,
+								 'pais' 	 => $username[0]->pais,
 								 'empresa' 	 => $username[0]->empresa,
-								 'Id' 		 => $username[0]->Id);
+								 'id' 		 => $username[0]->id);
           		$this->session->set_userdata($session);
 				$data['error'] = EXIT_SUCCESS;
 				}

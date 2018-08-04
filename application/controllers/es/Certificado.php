@@ -13,7 +13,6 @@ class Certificado extends CI_Controller {
 
 	public function index(){
 		$nombre = $this->session->userdata('Nombres');
-		$Apellidos = $this->session->userdata('Apellidos');
 		$html='<html>
 					<head>
 						<link rel="shortcut icon" href="http://hpedigitalmarketingacademy.com/Certificados/public/img/logo/favicon.ico">
@@ -83,16 +82,16 @@ class Certificado extends CI_Controller {
 						</style>
 					</head>
 					<body>
-						<img width="100%" height="18" src="http://www.sap-latam.com/SAP_Marketing_Academy/public/img/logo/fondo1.png"/>
+						<img width="100%" height="18" src="http://www.sap-latam.com/SAP_Marketing_Academy/public/img/logo/barras_purple.png"/>
 						<div class="js-information">
 							<img style="float: right;width: 170px;" src="http://www.sap-latam.com/SAP_Marketing_Academy/public/img/logo/logo-sap--black.png"/>
 							<h2>Certificado</h2>
 							<h3>SAP Marketing Academy</h3>
 							<p>SAP hace constar que:</p>
-							<h3 style="border-bottom: 1px solid #000000;padding: 10px 0; margin-bottom: 20px;width:500px;">'.$nombre.' '.$Apellidos.'</h3>
+							<h3 style="border-bottom: 1px solid #000000;padding: 10px 0; margin-bottom: 20px;width:500px;">'.$nombre.'</h3>
 							<div class="js-information--curso">
 								<p>Ha participado de</p>
-								<h3>Marketing Mix Modeling</h3>
+								<h3>Content Marketing</h3>
 								<p>Julio del 2018</p>
 							</div>
 							<div class="js-information--firma" style="margin-top: 20px;">
@@ -102,7 +101,7 @@ class Certificado extends CI_Controller {
 							</div>
 							<img style="float: right;position: absolute;margin-top: -75px;margin-bottom: 14px;" src="http://www.sap-latam.com/SAP_Marketing_Academy/public/img/logo/color1.png"/>
 						</div>
-						<img width="100%" height="18" src="http://www.sap-latam.com/SAP_Marketing_Academy/public/img/logo/fondo1.png"/>
+						<img width="100%" height="18" src="http://www.sap-latam.com/SAP_Marketing_Academy/public/img/logo/barras_purple.png"/>
 					</body>
 				  </html>';
 		$mpdf = new \Mpdf\Mpdf(['orientation' => 'L']);

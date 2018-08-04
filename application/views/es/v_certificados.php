@@ -37,9 +37,9 @@
             <div class="js-container">
                 <div class="js-datos">
                     <p>Bienvenido(a):</p>
-                    <h2><?php echo $nombre.' '.$apellidos ?></h2>
+                    <h2><?php echo $nombre ?></h2>
                     <p>Pa&iacute;s: <?php echo $pais ?></p>
-                    <p>E-mail: <?php echo $correo ?></p>
+                    <p>E-mail: <?php echo $email ?></p>
                     <p>Empresa: <?php echo $empresa ?></p>
                 </div>
                 <div class="js-certificados">

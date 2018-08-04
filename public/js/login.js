@@ -1,15 +1,15 @@
 function ingresar() {
-	var correo = $('#exampleInputEmail1').val();
-	if(correo == null) {
+	var email = $('#exampleInputEmail1').val();
+	if(email == null) {
 		$('#exampleInputEmail1').parent().addClass('is-invalid');
 		return;
 	}
-	if (!validateEmail(correo)) {
+	if (!validateEmail(email)) {
 		$('#exampleInputEmail1').parent().addClass('is-invalid');
 		return;
 	}
 	$.ajax({
-		data  : { correo : correo},
+		data  : { email : email},
 		url   : 'login/ingresar',
 		type  : 'POST'
 	}).done(function(data){
