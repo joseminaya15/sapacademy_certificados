@@ -32,7 +32,7 @@ class Descargas extends CI_Controller {
                             <p>'.$key->nombre_curso.'</p>
                         </div>
                         <div class="js-certificados__contenido--right">
-                            <a onclick="certificado('.base64_encode($key->nombre_curso).')">Previsualizar</a>
+                            <a href="" target="_blank" onclick="certificado('.base64_encode($key->nombre_curso).')">Previsualizar</a>
                         </div>
                     </div>';
         }
