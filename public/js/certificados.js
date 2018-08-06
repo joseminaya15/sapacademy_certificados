@@ -7,7 +7,10 @@ function certificado(session) {
         try{
             data = JSON.parse(data);
             if (data.error == 0) {
-                $('.js-certificados__contenido--right').find('a').attr('href','Certificado');
+                $('#visualizar').attr({
+                    href : 'Certificado',
+                    target: '_blank'
+                });
             } else {
                 toastr.remove();
                 msj('error', data.error);
@@ -17,6 +20,10 @@ function certificado(session) {
             msj('error', err.message);
         }
     });
+    // $('#visualizar').attr({
+    //     href : 'Certificado',
+    //     target: '_blank'
+    // });
 }
 function cerrarSesion(){
     $.ajax({
