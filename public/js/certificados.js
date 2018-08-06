@@ -7,6 +7,7 @@ function certificado(session) {
         try{
             data = JSON.parse(data);
             if (data.error == 0) {
+                window.open('Certificado',"_blank");
                 // location.href = 'Certificado';
                 // $('#visualizar').attr('href','Certificado');
             } else {
@@ -18,10 +19,6 @@ function certificado(session) {
             msj('error', err.message);
         }
     });
-    // $('#visualizar').attr({
-    //     href : 'Certificado',
-    //     target: '_blank'
-    // });
 }
 function cerrarSesion(){
     $.ajax({
