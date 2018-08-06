@@ -13,6 +13,7 @@ class Certificado extends CI_Controller {
 
 	public function index(){
 		$nombre = $this->session->userdata('Nombres');
+		$curso = $this->session->userdata('curso');
 		$html='<html>
 					<head>
 						<link rel="shortcut icon" href="http://hpedigitalmarketingacademy.com/Certificados/public/img/logo/favicon.ico">
@@ -97,7 +98,7 @@ class Certificado extends CI_Controller {
 							<div class="js-information--firma" style="margin-top: 20px;">
 								<img width="200" style="border-bottom: 1px solid #757575;" src="http://www.sap-latam.com/SAP_Marketing_Academy/public/img/logo/firma.png"/><br><br>
 								<span>SAP Partner & SME</span><br>
-								<span>Marketing Latin America</span><br>
+								<span>'.$curso.'</span><br>
 							</div>
 							<img style="float: right;position: absolute;margin-top: -75px;margin-bottom: 14px;" src="http://www.sap-latam.com/SAP_Marketing_Academy/public/img/logo/color1.png"/>
 						</div>

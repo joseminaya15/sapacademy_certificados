@@ -29,16 +29,29 @@ class Descargas extends CI_Controller {
             $html .= '<div class="js-certificados__contenido">
                         <div class="js-certificados__contenido--left">
                             <img src="'.RUTA_IMG.'logo/pdf.png">
-                            <p>Certificado de Content Marketing</p>
+                            <p>'.$key->nombre_curso.'</p>
                         </div>
                         <div class="js-certificados__contenido--right">
-                            <a href="Certificado" target="_blank">Previsualizar</a>
+                            <a onclick="certificado('.base64_encode($key->nombre_curso).')">Previsualizar</a>
                         </div>
                     </div>';
         }
         $data['html'] = $html;
 		$this->load->view('es/v_certificados', $data);
 	}
+    function descarga (){
+        $data['error'] = EXIT_ERROR;
+        $data['msj']   = null;
+        try {
+            $recibo = $this->input->post('session');
+            $nombre = base64_decode($recibo);
+            $this->session->set_userdata('curso' => $nombre);
+            $data['error'] = EXIT_SUCCESS;
+        } catch (Exception $e){
+            $data['msj'] = $e->getMessage();
+        }
+        echo json_encode($data);
+    }
     function cerrarSesion(){
         $data['error'] = EXIT_ERROR;
         $data['msj']   = null;
