@@ -92,13 +92,13 @@ class Certificado extends CI_Controller {
 							<h3 style="border-bottom: 1px solid #000000;padding: 10px 0; margin-bottom: 20px;width:500px;">'.$nombre.'</h3>
 							<div class="js-information--curso">
 								<p>Ha participado de</p>
-								<h3>Content Marketing</h3>
+								<h3>'.$curso.'</h3>
 								<p>Julio del 2018</p>
 							</div>
 							<div class="js-information--firma" style="margin-top: 20px;">
 								<img width="200" style="border-bottom: 1px solid #757575;" src="http://www.sap-latam.com/SAP_Marketing_Academy/public/img/logo/firma.png"/><br><br>
 								<span>SAP Partner & SME</span><br>
-								<span>'.$curso.'</span><br>
+								<span>Marketing Latin America</span><br>
 							</div>
 							<img style="float: right;position: absolute;margin-top: -75px;margin-bottom: 14px;" src="http://www.sap-latam.com/SAP_Marketing_Academy/public/img/logo/color1.png"/>
 						</div>
