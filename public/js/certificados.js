@@ -7,7 +7,8 @@ function certificado(session) {
         try{
             data = JSON.parse(data);
             if (data.error == 0) {
-                $('#visualizar').attr('href','Certificado');
+                location.href = 'Certificado';
+                // $('#visualizar').attr('href','Certificado');
             } else {
                 toastr.remove();
                 msj('error', data.error);
