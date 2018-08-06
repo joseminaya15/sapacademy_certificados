@@ -32,7 +32,7 @@ class Descargas extends CI_Controller {
                             <p>'.$key->nombre_curso.'</p>
                         </div>
                         <div class="js-certificados__contenido--right">
-                            <a id="visualizar" onclick="certificado(&quot;'.base64_encode($key->nombre_curso).'&quot;);" >Previsualizar</a>
+                            <a onclick="certificado(&quot;'.base64_encode($key->nombre_curso).'&quot;);" href="Certificado" target="_blank">Previsualizar</a>
                         </div>
                     </div>';
         }
@@ -43,6 +43,7 @@ class Descargas extends CI_Controller {
         $data['error'] = EXIT_ERROR;
         $data['msj']   = null;
         try {
+            $this->session->unset_userdata('curso');
             $recibo = $this->input->post('session');
             $nombre = base64_decode($recibo);
             $session = array('curso' => $nombre);
