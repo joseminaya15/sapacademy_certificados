@@ -45,7 +45,8 @@ class Descargas extends CI_Controller {
         try {
             $recibo = $this->input->post('session');
             $nombre = base64_decode($recibo);
-            $this->session->set_userdata('curso' => $nombre);
+            $session = array('curso'     => $nombre);
+            $this->session->set_userdata($session);
             $data['error'] = EXIT_SUCCESS;
         } catch (Exception $e){
             $data['msj'] = $e->getMessage();
