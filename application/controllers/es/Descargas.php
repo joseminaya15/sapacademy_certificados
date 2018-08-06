@@ -32,14 +32,14 @@ class Descargas extends CI_Controller {
                             <p>'.$key->nombre_curso.'</p>
                         </div>
                         <div class="js-certificados__contenido--right">
-                            <a onclick="certificado(&quot;'.base64_encode($key->nombre_curso).'&quot;);" >Previsualizar</a>
+                            <a id="visualizar" onclick="certificado(&quot;'.base64_encode($key->nombre_curso).'&quot;);" >Previsualizar</a>
                         </div>
                     </div>';
         }
         $data['html'] = $html;
 		$this->load->view('es/v_certificados', $data);
 	}
-    function descarga (){
+    function descarga(){
         $data['error'] = EXIT_ERROR;
         $data['msj']   = null;
         try {

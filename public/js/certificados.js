@@ -7,9 +7,11 @@ function certificado(session) {
         try{
             data = JSON.parse(data);
             if (data.error == 0) {
-                window.open('Certificado',"_blank");
-                // location.href = 'Certificado';
-                // $('#visualizar').attr('href','Certificado');
+                $('#visualizar').attr({
+                    href : 'Certificado',
+                    target: '_blank'
+                });
+                // $('.js-certificados__contenido--right').find('a').attr('href','Certificado');
             } else {
                 toastr.remove();
                 msj('error', data.error);
