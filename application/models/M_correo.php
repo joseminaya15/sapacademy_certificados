@@ -6,9 +6,11 @@ class M_correo extends  CI_Model{
     }
 
     function getDatosCorreos($name) {
-        $sql = "SELECT *
-                  FROM personas
-                 WHERE email LIKE ?";
+        $sql = "SELECT * 
+                  FROM personas p, 
+                       persona_x_curso pc
+                  WHERE p.email LIKE ? 
+                    AND p.id = pc.id_persona";
         $result = $this->db->query($sql, array($name));
         return $result->result();
     }
