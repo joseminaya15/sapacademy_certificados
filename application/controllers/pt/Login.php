@@ -25,8 +25,8 @@ class Login extends CI_Controller {
 		$data['error'] = EXIT_ERROR;
         $data['msj']   = null;
          try {
-			$correo   = $this->input->post('correo');
-			$username = $this->M_correo->getDatosCorreos($correo);
+			$email    = $this->input->post('email');
+			$username = $this->M_correo->getDatosCorreos($email);
 			if(count($username) != 0) {
 				if ($username[0]->id > 385) {
 					if($username[0]->email == $email) {
