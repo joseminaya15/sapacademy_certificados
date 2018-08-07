@@ -14,11 +14,10 @@ class Login extends CI_Controller {
     }
 
 	public function index(){
-		$this->session->unset_userdata('correo');
+		$this->session->unset_userdata('email');
 	    $this->session->unset_userdata('Nombres');
-	    $this->session->unset_userdata('Apellidos');
-	    $this->session->unset_userdata('Pais');
-	    $this->session->unset_userdata('Id');
+	    $this->session->unset_userdata('pais');
+	    $this->session->unset_userdata('id');
 		$this->load->view('pt/v_login');
 	}
 
@@ -29,16 +28,21 @@ class Login extends CI_Controller {
 			$correo   = $this->input->post('correo');
 			$username = $this->M_correo->getDatosCorreos($correo);
 			if(count($username) != 0) {
-				if($username[0]->Email == $correo) {
-				$session = array('correo'    => $correo,
-								 'Nombres'   => $username[0]->Nombres,
-								 'Apellidos' => $username[0]->Apellidos,
-								 'Pais' 	 => $username[0]->Pais,
-								 'empresa' 	 => $username[0]->empresa,
-								 'Id' 		 => $username[0]->Id);
-          		$this->session->set_userdata($session);
-				$data['error'] = EXIT_SUCCESS;
+				if ($username[0]->id > 385) {
+					if($username[0]->email == $email) {
+					$session = array('email'     => $email,
+									 'Nombres'   => $username[0]->Nombres,
+									 'pais' 	 => $username[0]->pais,
+									 'empresa' 	 => $username[0]->empresa,
+									 'id' 		 => $username[0]->id);
+	          		$this->session->set_userdata($session);
+					$data['error'] = EXIT_SUCCESS;
+					}
+				} else {
+					$data['msj'] = 'Usuario registrado en otro idioma';
 				}
+			} else {
+				$data['msj'] = 'Usuario no registrado';
 			}
         }catch(Exception $e) {
            $data['msj'] = $e->getMessage();

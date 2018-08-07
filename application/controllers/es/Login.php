@@ -28,15 +28,21 @@ class Login extends CI_Controller {
 			$email    = $this->input->post('email');
 			$username = $this->M_correo->getDatosCorreos($email);
 			if(count($username) != 0) {
-				if($username[0]->email == $email) {
-				$session = array('email'     => $email,
-								 'Nombres'   => $username[0]->Nombres,
-								 'pais' 	 => $username[0]->pais,
-								 'empresa' 	 => $username[0]->empresa,
-								 'id' 		 => $username[0]->id);
-          		$this->session->set_userdata($session);
-				$data['error'] = EXIT_SUCCESS;
+				if ($username[0]->id <= 385) {
+					if($username[0]->email == $email) {
+					$session = array('email'     => $email,
+									 'Nombres'   => $username[0]->Nombres,
+									 'pais' 	 => $username[0]->pais,
+									 'empresa' 	 => $username[0]->empresa,
+									 'id' 		 => $username[0]->id);
+	          		$this->session->set_userdata($session);
+					$data['error'] = EXIT_SUCCESS;
+					}
+				} else {
+					$data['msj'] = 'Usuario registrado en otro idioma';
 				}
+			} else {
+				$data['msj'] = 'Usuario no registrado';
 			}
         }catch(Exception $e) {
            $data['msj'] = $e->getMessage();

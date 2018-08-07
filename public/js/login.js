@@ -20,7 +20,8 @@ function ingresar() {
         		$('#exampleInputEmail1').val("");
         	}else {
 				$('#exampleInputEmail1').parent().addClass('is-invalid');
-				msj('error', 'Su correo no existe');
+				toastr.remove();
+				msj('error', data.msj);
         		return;
         	}
       } catch (err){
