@@ -14,7 +14,6 @@ class Certificado extends CI_Controller {
 	public function index(){
 		$nombre = $this->session->userdata('Nombres');
 		$curso  = $this->session->userdata('curso');
-		$fondo  = $this->session->userdata('fondo');
 		$img    = $this->session->userdata('imagen');
 		$html='<html>
 					<head>
@@ -85,7 +84,7 @@ class Certificado extends CI_Controller {
 						</style>
 					</head>
 					<body>
-						<img width="100%" height="18" src="http://www.sap-latam.com/SAP_Marketing_Academy/public/img/logo/barras_'.$fondo.'.png"/>
+						<img width="100%" height="18" src="http://www.sap-latam.com/SAP_Marketing_Academy/public/img/logo/barras_'.$img.'.png"/>
 						<div class="js-information">
 							<img style="float: right;width: 170px;" src="http://www.sap-latam.com/SAP_Marketing_Academy/public/img/logo/logo-sap--black.png"/>
 							<h2>Certificado</h2>
@@ -104,7 +103,7 @@ class Certificado extends CI_Controller {
 							</div>
 							<img style="float: right;position: absolute;margin-top: -75px;margin-bottom: 14px;" src="http://www.sap-latam.com/SAP_Marketing_Academy/public/img/logo/color'.$img.'.png"/>
 						</div>
-						<img width="100%" height="18" src="http://www.sap-latam.com/SAP_Marketing_Academy/public/img/logo/barras_'.$fondo.'.png"/>
+						<img width="100%" height="18" src="http://www.sap-latam.com/SAP_Marketing_Academy/public/img/logo/barras_'.$img.'.png"/>
 					</body>
 				  </html>';
 		$mpdf = new \Mpdf\Mpdf(['orientation' => 'L']);
