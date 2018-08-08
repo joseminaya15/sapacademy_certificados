@@ -61,13 +61,14 @@ class Certificado extends CI_Controller {
 								line-height: 32px;
 								font-family: "Roboto",sans-serif;
 								font-weight: bold;
-								color: #939598;
+								color: #0083CB;
 								margin: 10px 0;
 							}
 							.js-information--curso h3{
 								font-size: 32px;
 								line-height: 34px;
 								margin: 10px 0;
+								color: #959799;
 							}
 							.js-information--curso p{
 								font-size: 16px;
@@ -89,10 +90,10 @@ class Certificado extends CI_Controller {
 							<img style="float: right;width: 170px;" src="http://www.sap-latam.com/SAP_Marketing_Academy/public/img/logo/logo-sap--black.png"/>
 							<h2>Certificado</h2>
 							<h3>SAP Marketing Academy</h3>
-							<p>SAP hace constar que:</p>
-							<h3 style="border-bottom: 1px solid #000000;padding: 10px 0; margin-bottom: 20px;width:500px;">'.$nombre.'</h3>
+							<p>SAP afirma-se que</p>
+							<h3 style="border-bottom: 1px solid #000000;padding: 10px 0; margin-bottom: 20px;width:620px;color:#959799;">'.$nombre.'</h3>
 							<div class="js-information--curso">
-								<p>Ha participado de</p>
+								<p>Participou na</p>
 								<h3>'.$curso.'</h3>
 								<p>Julio del 2018</p>
 							</div>
@@ -101,7 +102,7 @@ class Certificado extends CI_Controller {
 								<span>SAP Partner & SME</span><br>
 								<span>Marketing Latin America</span><br>
 							</div>
-							<img style="float: right;position: absolute;margin-top: -75px;margin-bottom: 14px;" src="http://www.sap-latam.com/SAP_Marketing_Academy/public/img/logo/color'.$img.'.png"/>
+							<img style="float: right;position: absolute;margin-top: -75px;margin-bottom: 14px;width:170px;" src="http://www.sap-latam.com/SAP_Marketing_Academy/public/img/logo/color'.$img.'.png"/>
 						</div>
 						<img width="100%" height="18" src="http://www.sap-latam.com/SAP_Marketing_Academy/public/img/logo/barras_'.$img.'.png"/>
 					</body>
