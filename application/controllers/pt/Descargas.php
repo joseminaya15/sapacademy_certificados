@@ -14,40 +14,58 @@ class Descargas extends CI_Controller {
     }
 
 	public function index(){
-        if($this->session->userdata('correo') == null){
+        if($this->session->userdata('email') == null){
             header("location: Login");
+        } else {
+            $data['nombre']    = $this->session->userdata('Nombres');
+            $data['email']     = $this->session->userdata('email') == null ? '-' : $this->session->userdata('email');
+            $data['empresa']   = $this->session->userdata('empresa') == null ? '-' : $this->session->userdata('empresa');
+            $data['pais']      = $this->session->userdata('pais') == null ? '-' : $this->session->userdata('pais');
+            $username          = $this->M_correo->getDatosCorreos($this->session->userdata('email'));
+            $html = '';
+            $pdf  = '';
+            $btn  = '';
+            $i    = 1;
+            foreach ($username as $key) {
+                $html .= '<div class="js-certificados__contenido">
+                            <div class="js-certificados__contenido--left">
+                                <img src="'.RUTA_IMG.'logo/pdf.png">
+                                <p>'.$key->nombre_curso.'</p>
+                            </div>
+                            <div class="js-certificados__contenido--right">
+                                <a onclick="certificado(&quot;'.base64_encode($key->nombre_curso).'&quot; ,'.$i.' , '.$key->idcurso.');" href="Certificado" target="_blank">Previsualizar</a>
+                            </div>
+                        </div>';
+                $i++;
+            }
+            $data['html'] = $html;
+            $this->load->view('pt/v_certificados', $data);
         }
-        $data['nombre']    = $this->session->userdata('Nombres');
-        $data['apellidos'] = $this->session->userdata('Apellidos');
-        $data['pais']      = $this->session->userdata('Pais') == null ? '-' : $this->session->userdata('Pais');
-        $data['correo']    = $this->session->userdata('correo') == null ? '-' : $this->session->userdata('correo');
-        $data['empresa']   = $this->session->userdata('empresa') == null ? '-' : $this->session->userdata('empresa');
-        $username          = $this->M_correo->getDatosCorreos($this->session->userdata('correo'));
-        $html = '';
-        $pdf  = '';
-        $btn  = '';
-        foreach ($username as $key) {
-            $html .= '<div class="certificados">
-                        <div class="contenido">
-                            <img src="'.RUTA_IMG.'logo/pdf.png">
-                            <p><a href="Certificado" target="_blank">Previsualizar</a></p>
-                        </div>
-                    </div>
-                    <div class="redes" style="display: none;">
-                        <a class="mdl-button mdl-js-button mdl-button--icon twitter" href = "https://twitter.com/intent/tweet?status='.RUTA_ARCHIVOS.'$key->certificados" data-size = "large"><i class="fa fa-twitter"></i></a>
-                        <a class="mdl-button mdl-js-button mdl-button--icon linkedin" href = "https://www.linkedin.com/shareArticle?mini=true&url=http://www.sap-latam.com/sap_business_one/Prueba&title=Publicación&source=SAP" data-size="large"><i class="fa fa-linkedin"></i></a>
-                        <a class="mdl-button mdl-js-button mdl-button--icon facebook" href = "http://facebook.com/sharer.php?u=http://www.sap-latam.com/sap_business_one/Prueba" data-size="large"><i class="fa fa-facebook"></i></a>
-                        <a class="mdl-button mdl-js-button mdl-button--icon google" href = "https://plus.google.com/share?url=http://www.sap-latam.com/sap_business_one/Prueba" data-size="large"><i class="fa fa-google-plus"></i></a>
-                    </div>';
-        }
-        $data['html'] = $html;
-		$this->load->view('pt/v_certificados', $data);
 	}
+    function descarga(){
+        $data['error'] = EXIT_ERROR;
+        $data['msj']   = null;
+        try {
+            $this->session->unset_userdata('curso');
+            $recibo = $this->input->post('session');
+            $indice = $this->input->post('indice');
+            $img    = $this->input->post('img');
+            $nombre = base64_decode($recibo);
+            $session = array('curso' => $nombre,
+                             'fondo' => $indice,
+                             'imagen' => $img);
+            $this->session->set_userdata($session);
+            $data['error'] = EXIT_SUCCESS;
+        } catch (Exception $e){
+            $data['msj'] = $e->getMessage();
+        }
+        echo json_encode($data);
+    }
     function cerrarSesion(){
         $data['error'] = EXIT_ERROR;
         $data['msj']   = null;
         try {
-            $this->session->unset_userdata('correo');
+            $this->session->unset_userdata('email');
             $data['error'] = EXIT_SUCCESS;
         }catch (Exception $e){
             $data['msj'] = $e->getMessage();

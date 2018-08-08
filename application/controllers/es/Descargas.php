@@ -16,28 +16,31 @@ class Descargas extends CI_Controller {
 	public function index(){
         if($this->session->userdata('email') == null){
             header("location: Login");
+        } else {
+            $data['nombre']    = $this->session->userdata('Nombres');
+            $data['email']     = $this->session->userdata('email') == null ? '-' : $this->session->userdata('email');
+            $data['empresa']   = $this->session->userdata('empresa') == null ? '-' : $this->session->userdata('empresa');
+            $data['pais']      = $this->session->userdata('pais') == null ? '-' : $this->session->userdata('pais');
+            $username          = $this->M_correo->getDatosCorreos($this->session->userdata('email'));
+            $html = '';
+            $pdf  = '';
+            $btn  = '';
+            $i    = 1;
+            foreach ($username as $key) {
+                $html .= '<div class="js-certificados__contenido">
+                            <div class="js-certificados__contenido--left">
+                                <img src="'.RUTA_IMG.'logo/pdf.png">
+                                <p>'.$key->nombre_curso.'</p>
+                            </div>
+                            <div class="js-certificados__contenido--right">
+                                <a onclick="certificado(&quot;'.base64_encode($key->nombre_curso).'&quot; ,'.$i.' , '.$key->idcurso.');" href="Certificado" target="_blank">Previsualizar</a>
+                            </div>
+                        </div>';
+                $i++;
+            }
+            $data['html'] = $html;
+            $this->load->view('es/v_certificados', $data);
         }
-        $data['nombre']    = $this->session->userdata('Nombres');
-        $data['email']    = $this->session->userdata('email') == null ? '-' : $this->session->userdata('email');
-        $data['empresa']   = $this->session->userdata('empresa') == null ? '-' : $this->session->userdata('empresa');
-        $data['pais']      = $this->session->userdata('pais') == null ? '-' : $this->session->userdata('pais');
-        $username          = $this->M_correo->getDatosCorreos($this->session->userdata('email'));
-        $html = '';
-        $pdf  = '';
-        $btn  = '';
-        foreach ($username as $key) {
-            $html .= '<div class="js-certificados__contenido">
-                        <div class="js-certificados__contenido--left">
-                            <img src="'.RUTA_IMG.'logo/pdf.png">
-                            <p>'.$key->nombre_curso.'</p>
-                        </div>
-                        <div class="js-certificados__contenido--right">
-                            <a onclick="certificado(&quot;'.base64_encode($key->nombre_curso).'&quot;);" href="Certificado" target="_blank">Previsualizar</a>
-                        </div>
-                    </div>';
-        }
-        $data['html'] = $html;
-		$this->load->view('es/v_certificados', $data);
 	}
     function descarga(){
         $data['error'] = EXIT_ERROR;
@@ -45,8 +48,12 @@ class Descargas extends CI_Controller {
         try {
             $this->session->unset_userdata('curso');
             $recibo = $this->input->post('session');
+            $indice = $this->input->post('indice');
+            $img    = $this->input->post('img');
             $nombre = base64_decode($recibo);
-            $session = array('curso' => $nombre);
+            $session = array('curso' => $nombre,
+                             'fondo' => $indice,
+                             'imagen' => $img);
             $this->session->set_userdata($session);
             $data['error'] = EXIT_SUCCESS;
         } catch (Exception $e){

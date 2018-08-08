@@ -1,6 +1,8 @@
-function certificado(session) {
+function certificado(session, indice, img) {
     $.ajax({
-        data : {session : session},
+        data : {session : session,
+                indice  : indice,
+                img     : img },
         url  : 'Descargas/descarga',
         type : 'POST',
         async : false

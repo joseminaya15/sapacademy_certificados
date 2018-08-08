@@ -7,7 +7,8 @@ class M_correo extends  CI_Model{
 
     function getDatosCorreos($name) {
         $sql = "SELECT p.*,
-                       c.nombre AS nombre_curso
+                       c.nombre AS nombre_curso,
+                       c.id AS idcurso
                   FROM personas p,
                        cursos c,
                        persona_x_curso pc
