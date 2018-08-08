@@ -30,7 +30,7 @@
                     <p>SAP Marketing Academy</p>
                 </div>
                 <div class="js-header--right">
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Fechar Sessão</button>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="cerrarSesion()">Fechar Sessão</button>
                 </div>
             </div>
         </div>
