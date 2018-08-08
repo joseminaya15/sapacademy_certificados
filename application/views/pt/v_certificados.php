@@ -42,7 +42,7 @@
                     <p>Empresa: <?php echo $empresa ?></p>
                 </div>
                 <div class="js-certificados">
-                    <h2>Certificados obtenidos</h2>
+                    <h2>Certificados obtidos</h2>
                     <?php echo $html ?>
                 </div>
             </div>
