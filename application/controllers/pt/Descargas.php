@@ -25,7 +25,6 @@ class Descargas extends CI_Controller {
             $html = '';
             $pdf  = '';
             $btn  = '';
-            $i    = 1;
             foreach ($username as $key) {
                 $html .= '<div class="js-certificados__contenido">
                             <div class="js-certificados__contenido--left">
@@ -33,11 +32,9 @@ class Descargas extends CI_Controller {
                                 <p>'.$key->nombre_curso.'</p>
                             </div>
                             <div class="js-certificados__contenido--right">
-                                <a onclick="certificado(&quot;'.base64_encode($key->nombre_curso).'&quot; ,'.$i.' , '.$key->idcurso.');" href="Certificado" target="_blank">Previsualizar</a>
+                                <a onclick="certificado(&quot;'.base64_encode($key->nombre_curso).'&quot; , '.$key->idcurso.');" href="Certificado" target="_blank">Previsualizar</a>
                             </div>
                         </div>';
-                ($i == 3) ? $i = 0 : $i = $i;
-                $i++;
             }
             $data['html'] = $html;
             $this->load->view('pt/v_certificados', $data);
@@ -49,12 +46,10 @@ class Descargas extends CI_Controller {
         try {
             $this->session->unset_userdata('curso');
             $recibo = $this->input->post('session');
-            $indice = $this->input->post('indice');
             $img    = $this->input->post('img');
             $nombre = base64_decode($recibo);
             $session = array('curso' => $nombre,
-                             'fondo' => $indice,
-                             'imagen' => $img);
+                             'imagen'=> $img);
             $this->session->set_userdata($session);
             $data['error'] = EXIT_SUCCESS;
         } catch (Exception $e){
