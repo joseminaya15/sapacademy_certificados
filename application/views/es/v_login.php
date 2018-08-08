@@ -57,10 +57,10 @@
         <script src="<?php echo RUTA_JS?>Utils.js?v=<?php echo time();?>"></script>
         <script src="<?php echo RUTA_JS?>login.js?v=<?php echo time();?>"></script>
         <script type="text/javascript">
-            var URLactual = window.location;
-            if(URLactual['pathname'] != '/sapacademy_certificados/es/'){
-                location.href = 'http://localhost:8080/sapacademy_certificados/es/';
-            }
+            // var URLactual = window.location;
+            // if(URLactual['href'] != 'http://www.sap-latam.com/SAP_Marketing_Academy/es/'){
+            //     location.href = 'http://www.sap-latam.com/SAP_Marketing_Academy/es/';
+            // }
             if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
                 $('select').selectpicker('mobile');
             } else {
