@@ -36,6 +36,7 @@ class Descargas extends CI_Controller {
                                 <a onclick="certificado(&quot;'.base64_encode($key->nombre_curso).'&quot; ,'.$i.' , '.$key->idcurso.');" href="Certificado" target="_blank">Previsualizar</a>
                             </div>
                         </div>';
+                ($i == 3) ? $i = 0 : $i = $i;
                 $i++;
             }
             $data['html'] = $html;
