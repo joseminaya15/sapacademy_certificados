@@ -29,6 +29,9 @@
                     <img class="logo-one" src="<?php echo RUTA_IMG?>logo/logo_favicon.png">
                     <p>SAP Marketing Academy</p>
                 </div>
+                <div class="js-header--right">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Fechar Sessão</button>
+                </div>
             </div>
         </div>
         <div id="certificado">
