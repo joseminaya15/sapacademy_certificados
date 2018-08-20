@@ -32,7 +32,7 @@
             </div>
         </div>
         <section id="principal">
-            <div class="js-fondo"></div>
+            <div class="js-fondo js-fondo--login"></div>
             <div class="js-container">
                 <div class="js-home js-height js-flex">
                     <div class="js-contenido">
