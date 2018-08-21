@@ -18,7 +18,7 @@ function ingresar(){
     try{
         data = JSON.parse(data);
         if(data.error == 0){
-          location.href = 'admin';
+          location.href = 'reporte';
           $('#usuario').val("");
           $('#password').val("");
         }else {
@@ -38,7 +38,7 @@ function verificarDatos(e){
 }
 function cerrarCesion(){
   $.ajax({
-    url  : 'admin/cerrarCesion',
+    url  : 'reporte/cerrarCesion',
     type : 'POST'
   }).done(function(data){
     try{
