@@ -56,19 +56,27 @@
                         </ul>
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="usuarios">
-                                <div class="js-select">
-                                    <select class="selectpicker" id="usuarioIdioma"  name="usuarioIdioma" onchange="usuarioIdiomaCurso()" title="Idioma">
-                                        <option value="es">Espa&ntilde;ol</option>
-                                        <option value="pt">Portugues</option>
-                                    </select>
-                                </div>
-                                <div class="js-select">
-                                    <select class="selectpicker" id="usuarioCurso"  name="usuarioCurso" onchange="usuarioIdiomaCurso()" title="Curso">
-                                        <?php echo $cursos ?>
-                                    </select>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="col-sm-3">
+                                            <div class="js-select">
+                                                <select class="selectpicker" id="usuarioIdioma"  name="usuarioIdioma" onchange="usuarioIdiomaCurso()" title="Idioma">
+                                                    <option value="es">Espa&ntilde;ol</option>
+                                                    <option value="pt">Portugues</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="js-select">
+                                                <select class="selectpicker" id="usuarioCurso"  name="usuarioCurso" onchange="usuarioIdiomaCurso()" title="Curso">
+                                                    <?php echo $cursos ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="table-responsive">
-                                    <table id="TableUsuario" class="display table table-bordered table-hover dt-responsive js-table" cellspacing="0" width="100%">
+                                    <table id="TableUsuario" class="display nowrap table table-bordered table-hover dt-responsive js-table" cellspacing="0" width="100%">
                                         <thead>
                                             <tr class="tr-header-reporte">
                                                 <th class="text-left">Nombres</th>
@@ -92,7 +100,7 @@
                                     </select>
                                 </div>
                                 <div class="table-responsive">
-                                    <table id="TableIngreso" class="display table table-bordered table-hover dt-responsive js-table" cellspacing="0" width="100%">
+                                    <table id="TableIngreso" class="display nowrap table table-bordered table-hover dt-responsive js-table" cellspacing="0" width="100%">
                                         <thead>
                                             <tr class="tr-header-reporte">
                                                 <th class="text-left">Usuario</th>
@@ -112,7 +120,7 @@
                                     </select>
                                 </div>
                                 <div class="table-responsive">
-                                    <table id="TableCurso" class="display table table-bordered table-hover dt-responsive js-table" cellspacing="0" width="100%">
+                                    <table id="TableCurso" class="display nowrap table table-bordered table-hover dt-responsive js-table" cellspacing="0" width="100%">
                                         <thead>
                                             <tr class="tr-header-reporte">
                                                 <th class="text-left">Usuario</th>
