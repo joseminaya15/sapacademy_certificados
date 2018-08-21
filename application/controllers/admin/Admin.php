@@ -35,10 +35,21 @@ class Admin extends CI_Controller {
             foreach ($descargas as $key) {
                 $html3 .= '';
             }
-            $data['tabla1'] = $html1;
-            $data['tabla2'] = $html2;
-            $data['tabla3'] = $html3;
+            $data['table1'] = $html1;
+            $data['table2'] = $html2;
+            $data['table3'] = $html3;
             $this->load->view('admin/v_admin', $data);
         // }
 	}
+    function cerrarCesion(){
+        $data['error'] = EXIT_ERROR;
+        $data['msj']   = null;
+        try {
+            $this->session->unset_userdata('usuario');
+            $data['error'] = EXIT_SUCCESS;
+        } catch (Exception $e){
+            $data['msj'] = $e->getMessage();
+        }
+        echo json_encode($data);
+    }
 }
