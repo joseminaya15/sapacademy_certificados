@@ -127,11 +127,11 @@
                                     </table>
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="reporte2017">
-                                <iframe src="http://104.236.53.199/sapreportes/sap/report/2017"></iframe>
+                            <div role="tabpanel" class="tab-pane m-t-50" id="reporte2017">
+                                <iframe width="100%" height="3000" frameborder="0" src="http://104.236.53.199/sapreportes/sap/report/2017"></iframe>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="reporte2018">
-                                <iframe src="http://104.236.53.199/sapreportes/sap/report/2018"></iframe>
+                            <div role="tabpanel" class="tab-pane m-t-50" id="reporte2018">
+                                <iframe width="100%" height="3000" frameborder="0" src="http://104.236.53.199/sapreportes/sap/report/2018"></iframe>
                             </div>
                         </div>
                     </div>
