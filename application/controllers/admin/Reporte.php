@@ -31,7 +31,7 @@ class Reporte extends CI_Controller {
                                <td>'.$key->email.'</td>
                                <td>'.$key->empresa.'</td>
                                <td>'.$key->pais.'</td>
-                               <td></td>
+                               <td>'.$key->curso.'</td>
                            </tr>';
             }
             foreach ($ingresos as $key) {
@@ -93,7 +93,7 @@ class Reporte extends CI_Controller {
                                <td>'.$key->email.'</td>
                                <td>'.$key->empresa.'</td>
                                <td>'.$key->pais.'</td>
-                               <td></td>
+                               <td>'.$key->curso.'</td>
                            </tr>';
             }
             $data['html']  = $html1;

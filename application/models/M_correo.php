@@ -63,24 +63,40 @@ class M_correo extends  CI_Model{
 
     function getAllUsers ($idioma = null, $curso = null){
         $where = '';
+        $condicion = '';
         if($idioma == 'es') {
-            $where .= 'AND p.id <= 385';
+            $where .= '  AND p.id <= 385';
         } else if ($idioma == 'pt') {
-            $where .= 'AND p.id > 385';
+            $where .= '  AND p.id > 385';
         }
         if($curso != null) {
-            $where .= " AND pc.id_curso = ".$curso;
+            $where    .= " AND pc.id_curso = ".$curso;
+            $condicion = " AND d.id_curso = ".$curso;
         } 
         $sql = "SELECT p.*,
-                       GROUP_CONCAT(c.nombre)
-                      -- GROUP_CONCAT(CONCAT_WS(':', Name, CAST(Value AS CHAR(7))) SEPARATOR ',') AS result
+                       CASE WHEN ( (SELECT GROUP_CONCAT(DISTINCT(c.nombre)) 
+                                      FROM cursos c,
+                                           descarga d,
+                                           persona_x_curso pc
+                                     WHERE d.id_curso = c.id
+                                       AND d.id_persona = p.id
+                                       ".$condicion.") IS NOT NULL )
+                         THEN (SELECT GROUP_CONCAT(DISTINCT(c.nombre)) 
+                                 FROM cursos c,
+                                      descarga d,
+                                      persona_x_curso pc
+                                WHERE d.id_curso = c.id
+                                  AND d.id_persona = p.id
+                                  ".$condicion.") ELSE '' 
+                         END AS curso
                   FROM personas p,
                        persona_x_curso pc,
                        cursos c,
                        descarga d
                  WHERE p.id = pc.id_persona
-                   AND c.id = pc.id_curso"
-                   .$where;
+                   AND c.id = pc.id_curso "
+                   .$where."
+              GROUP BY p.id";
         $result = $this->db->query($sql);
         return $result->result();
     }
