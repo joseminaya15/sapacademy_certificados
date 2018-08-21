@@ -62,7 +62,7 @@
         <script src="<?php echo RUTA_PLUGINS?>mdl/material.min.js?v=<?php echo time();?>"></script>
         <script src="<?php echo RUTA_PLUGINS?>toaster/toastr.js?v=<?php echo time();?>"></script>
         <script src="<?php echo RUTA_JS?>Utils.js?v=<?php echo time();?>"></script>
-        <script src="<?php echo RUTA_JS?>login.js?v=<?php echo time();?>"></script>
+        <script src="<?php echo RUTA_JS?>admin.js?v=<?php echo time();?>"></script>
         <script type="text/javascript">
             // var URLactual = window.location;
             // if(URLactual['href'] != 'http://www.sap-latam.com/SAP_Marketing_Academy/es/'){
