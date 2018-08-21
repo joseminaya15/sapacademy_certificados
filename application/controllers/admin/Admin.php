@@ -5,7 +5,7 @@ class Admin extends CI_Controller {
 
 	function __construct() {
         parent::__construct();
-        // $this->load->model('M_correo');
+        $this->load->model('M_correo');
         $this->load->helper("url");//BORRAR CACHÉ DE LA PÁGINA
         $this->output->set_header('Last-Modified:'.gmdate('D, d M Y H:i:s').'GMT');
         $this->output->set_header('Cache-Control: no-store, no-cache, must-revalidate');
@@ -14,6 +14,31 @@ class Admin extends CI_Controller {
     }
 
 	public function index(){
-		$this->load->view('admin/v_admin');
+        // if($this->session->userdata('usuario') == null){
+        //     header("location: Login");
+        // } else {
+            $html1 = '';
+            $html2 = '';
+            $html3 = '';
+            $usuarios = $this->M_correo->getAllUsers();
+            $ingresos = $this->M_correo->getIngresos();
+            $descargas= $this->M_correo->getDescargas();
+            foreach ($usuarios as $key) {
+                $html1 .= '';
+            }
+            foreach ($ingresos as $key) {
+                $html2 .= '<tr>
+                               <td></td>
+                               <td></td>
+                           </tr>';
+            }
+            foreach ($descargas as $key) {
+                $html3 .= '';
+            }
+            $data['tabla1'] = $html1;
+            $data['tabla2'] = $html2;
+            $data['tabla3'] = $html3;
+            $this->load->view('admin/v_admin', $data);
+        // }
 	}
 }

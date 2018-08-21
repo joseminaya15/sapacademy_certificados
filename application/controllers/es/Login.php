@@ -36,6 +36,9 @@ class Login extends CI_Controller {
 									 'empresa' 	 => $username[0]->empresa,
 									 'id' 		 => $username[0]->id);
 	          		$this->session->set_userdata($session);
+	          		$arrayInsert = array('id_persona'    => $username[0]->id,
+	          							 'fecha_ingreso' => date('Y-m-d H:i:s') );
+	          		$this->M_correo->guardaIngreso('ingreso', $arrayInsert);
 					$data['error'] = EXIT_SUCCESS;
 					}
 				} else {
