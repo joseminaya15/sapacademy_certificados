@@ -78,7 +78,7 @@
                                                 <th class="text-left">Cursos descargados</th>
                                             </tr>
                                         </thead>
-                                      <tbody>
+                                      <tbody id="usuarioBody">
                                           <?php echo $table1 ?>
                                       </tbody>
                                     </table>
@@ -99,7 +99,7 @@
                                                 <th class="text-left">Fecha de Ingreso</th>
                                             </tr>
                                         </thead>
-                                      <tbody>
+                                      <tbody id="ingresoBody">
                                           <?php echo $table2 ?>
                                       </tbody>
                                     </table>
@@ -119,7 +119,7 @@
                                                 <th class="text-left">Curso</th>
                                             </tr>
                                         </thead>
-                                      <tbody>
+                                      <tbody id="cursoBody">
                                           <?php echo $table3 ?>
                                       </tbody>
                                     </table>

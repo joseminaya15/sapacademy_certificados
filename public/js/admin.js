@@ -63,7 +63,7 @@ function ingresoIdioma(){
         try{
             data = JSON.parse(data);
             if(data.error == 0){
-                $('#TableIngreso').html(data.html);
+                $('#ingresoBody').html(data.html);
             }else {
                 return;
             }
@@ -84,7 +84,7 @@ function usuarioIdiomaCurso() {
         try{
             data = JSON.parse(data);
             if(data.error == 0){
-                $('#TableUsuario').html(data.html);
+                $('#usuarioBody').html(data.html);
             }else {
                 return;
             }
@@ -103,7 +103,7 @@ function descargaCursos() {
         try{
             data = JSON.parse(data);
             if(data.error == 0){
-                $('#TableCurso').html(data.html);
+                $('#cursoBody').html(data.html);
             }else {
                 return;
             }

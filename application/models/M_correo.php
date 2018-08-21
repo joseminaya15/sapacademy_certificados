@@ -87,12 +87,11 @@ class M_correo extends  CI_Model{
                                       persona_x_curso pc
                                 WHERE d.id_curso = c.id
                                   AND d.id_persona = p.id
-                                  ".$condicion.") ELSE '' 
+                                  ".$condicion.") ELSE '  ' 
                          END AS curso
                   FROM personas p,
                        persona_x_curso pc,
-                       cursos c,
-                       descarga d
+                       cursos c
                  WHERE p.id = pc.id_persona
                    AND c.id = pc.id_curso "
                    .$where."
