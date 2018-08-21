@@ -45,20 +45,20 @@ class M_correo extends  CI_Model{
     }
 
     function getAllUsers (){
-        $sql = "";
-        $result = $this->db->query($sql);
-        return $result->result();
+        // $sql = "";
+        // $result = $this->db->query($sql);
+        // return $result->result();
     }
 
     function getIngresos (){
-        $sql = "";
-        $result = $this->db->query($sql);
-        return $result->result();
+        // $sql = "";
+        // $result = $this->db->query($sql);
+        // return $result->result();
     }
 
     function getDescargas () {
-        $sql = "";
-        $result = $this->db->query($sql);
-        return $result->result();
+        // $sql = "";
+        // $result = $this->db->query($sql);
+        // return $result->result();
     }
 }
