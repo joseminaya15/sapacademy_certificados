@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="mdl-card__supporting-text">
-                        <ul class="nav nav-tabs" role="tablist">
+                        <ul class="nav nav-tabs js-tabs" role="tablist">
                             <li class="active"><a href="#usuarios" aria-controls="usuarios" role="tab" data-toggle="tab">Usuarios</a></li>
                             <li><a href="#ingresos" aria-controls="ingresos" role="tab" data-toggle="tab">Ingresos</a></li>
                             <li><a href="#descargas" aria-controls="descargas" role="tab" data-toggle="tab">Descargas</a></li>
