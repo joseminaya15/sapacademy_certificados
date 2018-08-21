@@ -91,4 +91,5 @@ function usuarioIdiomaCurso() {
         }catch(err){
             msj('error',err.message);
         }
+    });
 }
