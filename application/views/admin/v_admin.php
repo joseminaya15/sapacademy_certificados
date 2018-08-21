@@ -57,13 +57,13 @@
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="usuarios">
                                 <div class="js-select">
-                                    <select class="selectpicker" id="idioma"  name="idioma" onchange="" title="Idioma">
+                                    <select class="selectpicker" id="usuarioIdiomaCurso"  name="usuarioIdiomaCurso" onchange="usuarioIdiomaCurso()" title="Idioma">
                                         <option value="Español">Espa&ntilde;ol</option>
                                         <option value="Portugues">Portugues</option>
                                     </select>
                                 </div>
                                 <div class="js-select">
-                                    <select class="selectpicker" id="curso"  name="curso" onchange="" title="Curso">
+                                    <select class="selectpicker" id="curso"  name="curso" onchange="usuarioIdiomaCurso()" title="Curso">
                                         <option value="Español">Espa&ntilde;ol</option>
                                         <option value="Portugues">Portugues</option>
                                     </select>
