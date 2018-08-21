@@ -44,16 +44,35 @@ class M_correo extends  CI_Model{
         return array("error" => EXIT_SUCCESS, "msj"=> MSJ_INS);
     }
 
-    function getAllUsers (){
-        // $sql = "";
-        // $result = $this->db->query($sql);
-        // return $result->result();
+    function getAllUsers ($curso = null){
+        if($curso == null) {
+            $sql = "SELECT p.*
+                      FROM personas p";
+        } else {
+            $sql = "SELECT p.*
+                      FROM personas p,
+                           persona_x_curso pc,
+                           cursos c,
+                           descarga d
+                    WHERE p.id = pc.id_persona
+                    --  AND p.id = d.id_persona
+                      AND c.id = pc.id_curso
+                      AND d.id_curso = ''";
+        }
+        $result = $this->db->query($sql);
+        return $result->result();
     }
 
     function getIngresos (){
-        // $sql = "";
-        // $result = $this->db->query($sql);
-        // return $result->result();
+        $sql = "SELECT p.Nombres,
+                       COALESCE(DATE_FORMAT(i.fecha_ingreso, '%d/%m/%Y %H:%i %p'), '00/00/0000 00:00') AS fecha,
+                       i.fecha_ingreso
+                  FROM ingreso i, 
+                       personas p 
+                 WHERE p.id = i.id_persona 
+              ORDER BY fecha_ingreso desc";
+        $result = $this->db->query($sql);
+        return $result->result();
     }
 
     function getDescargas () {

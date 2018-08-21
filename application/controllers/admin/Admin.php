@@ -24,12 +24,18 @@ class Admin extends CI_Controller {
             $ingresos = $this->M_correo->getIngresos();
             $descargas= $this->M_correo->getDescargas();
             foreach ($usuarios as $key) {
-                $html1 .= '';
+                $html1 .= '<tr>
+                               <td>'.$key->Nombres.'</td>
+                               <td>'.$key->email.'</td>
+                               <td>'.$key->empresa.'</td>
+                               <td>'.$key->pais.'</td>
+                               <td></td>
+                           </tr>';
             }
             foreach ($ingresos as $key) {
                 $html2 .= '<tr>
-                               <td></td>
-                               <td></td>
+                               <td>'.$key->Nombres.'</td>
+                               <td>'.$key->fecha.'</td>
                            </tr>';
             }
             foreach ($descargas as $key) {
