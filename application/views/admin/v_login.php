@@ -44,7 +44,7 @@
                                 <input type="email" class="form-control" id="usuario" placeholder="Usuario" onkeyup="verificarDatos(event);">
                             </div>
                             <div class="js-input">
-                                <input type="email" class="form-control" id="password" placeholder="Contraseña" onkeyup="verificarDatos(event);">
+                                <input type="password" class="form-control" id="password" placeholder="Contraseña" onkeyup="verificarDatos(event);">
                             </div>
                         </div>
                         <div class="mdl-card__actions">
