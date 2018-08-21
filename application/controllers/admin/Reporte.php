@@ -47,6 +47,20 @@ class Reporte extends CI_Controller {
             $this->load->view('admin/v_admin', $data);
         // }
 	}
+
+    function ingresoIdioma () {
+        $data['error'] = EXIT_ERROR;
+        $data['msj']   = null;
+        try {
+            $idioma   = $this->input->post('idioma');
+            $ingresos = $this->M_correo->getIngresos($idioma);
+            $data['error'] = EXIT_SUCCESS;
+        } catch (Exception $e){
+            $data['msj'] = $e->getMessage();
+        }
+        echo json_encode($data);
+    }
+
     function cerrarCesion(){
         $data['error'] = EXIT_ERROR;
         $data['msj']   = null;

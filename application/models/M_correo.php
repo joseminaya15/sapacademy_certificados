@@ -63,13 +63,20 @@ class M_correo extends  CI_Model{
         return $result->result();
     }
 
-    function getIngresos (){
+    function getIngresos ($idioma = null){
+        $where = '';
+        if($idioma == 'es') {
+            $where = 'p.id <= 385';
+        } else if ($idioma == 'en') {
+            $where = 'p.id > 385';
+        }
         $sql = "SELECT p.Nombres,
                        COALESCE(DATE_FORMAT(i.fecha_ingreso, '%d/%m/%Y %H:%i %p'), '00/00/0000 00:00') AS fecha,
                        i.fecha_ingreso
                   FROM ingreso i, 
                        personas p 
-                 WHERE p.id = i.id_persona 
+                 WHERE p.id = i.id_persona"
+                 .$where." 
               ORDER BY fecha_ingreso desc";
         $result = $this->db->query($sql);
         return $result->result();
