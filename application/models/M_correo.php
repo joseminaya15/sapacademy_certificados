@@ -19,6 +19,13 @@ class M_correo extends  CI_Model{
         return $result->result();
     }
 
+    function getAllCursos() {
+        $sql = "SELECT nombre
+                  FROM cursos";
+        $result = $this->db->query($sql);
+        return $result->result();
+    }
+
     function getDatosCurso($name) {
         $sql = "SELECT *
                   FROM cursos
@@ -44,10 +51,26 @@ class M_correo extends  CI_Model{
         return array("error" => EXIT_SUCCESS, "msj"=> MSJ_INS);
     }
 
-    function getAllUsers ($curso = null){
+    function guardaDescarga($tabla, $arrayInsert){
+        $this->db->insert($tabla, $arrayInsert);
+        $sql = $this->db->insert_id();
+        if($this->db->affected_rows() != 1) {
+            throw new Exception('Error al insertar');
+            $data['error'] = EXIT_ERROR;
+        }
+        return array("error" => EXIT_SUCCESS, "msj"=> MSJ_INS);
+    }
+
+    function getAllUsers ($idioma = null, $curso = null){
+        $where = '';
+        if($idioma == 'es') {
+            $where .= 'AND p.id <= 385';
+        } else if ($idioma == 'pt') {
+            $where .= 'AND p.id > 385';
+        }
         if($curso == null) {
             $sql = "SELECT p.*
-                      FROM personas p";
+                      FROM personas p ";
         } else {
             $sql = "SELECT p.*
                       FROM personas p,
@@ -66,25 +89,33 @@ class M_correo extends  CI_Model{
     function getIngresos ($idioma = null){
         $where = '';
         if($idioma == 'es') {
-            $where = 'p.id <= 385';
-        } else if ($idioma == 'en') {
-            $where = 'p.id > 385';
+            $where = 'AND p.id <= 385';
+        } else if ($idioma == 'pt') {
+            $where = 'AND p.id > 385';
         }
         $sql = "SELECT p.Nombres,
                        COALESCE(DATE_FORMAT(i.fecha_ingreso, '%d/%m/%Y %H:%i %p'), '00/00/0000 00:00') AS fecha,
                        i.fecha_ingreso
                   FROM ingreso i, 
                        personas p 
-                 WHERE p.id = i.id_persona"
+                 WHERE p.id = i.id_persona "
                  .$where." 
               ORDER BY fecha_ingreso desc";
         $result = $this->db->query($sql);
         return $result->result();
     }
 
-    function getDescargas () {
-        // $sql = "";
-        // $result = $this->db->query($sql);
-        // return $result->result();
+    function getDescargas ($curso = null) {
+        $where = ($curso == null) ? '' : " AND c.nombre LIKE '".$curso."' ";
+        $sql = "SELECT p.Nombres AS usuario,
+                       c.nombre AS curso
+                  FROM descarga d,
+                       cursos c,
+                       personas p 
+                 WHERE p.id = d.id_persona 
+                   AND c.id = d.id_curso "
+                   .$where;
+        $result = $this->db->query($sql);
+        return $result->result();
     }
 }

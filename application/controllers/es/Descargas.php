@@ -51,6 +51,11 @@ class Descargas extends CI_Controller {
             $session = array('curso' => $nombre,
                              'imagen'=> $img);
             $this->session->set_userdata($session);
+            $curso = $this->M_correo->getDatosCurso($nombre);
+            $arrayInsert = array('id_persona'    => $this->session->userdata('id'),
+                                 'id_curso'      => $curso[0]->id,
+                                 'fecha_descarga'=> date('Y-m-d H:i:s') );
+            $this->M_correo->guardaDescarga('descarga', $arrayInsert);
             $data['error'] = EXIT_SUCCESS;
         } catch (Exception $e){
             $data['msj'] = $e->getMessage();

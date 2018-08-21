@@ -20,6 +20,8 @@ class Reporte extends CI_Controller {
             $html1 = '';
             $html2 = '';
             $html3 = '';
+            $combo = '';
+            $cursos   = $this->M_correo->getAllCursos();
             $usuarios = $this->M_correo->getAllUsers();
             $ingresos = $this->M_correo->getIngresos();
             $descargas= $this->M_correo->getDescargas();
@@ -38,12 +40,19 @@ class Reporte extends CI_Controller {
                                <td>'.$key->fecha.'</td>
                            </tr>';
             }
-            // foreach ($descargas as $key) {
-            //     $html3 .= '';
-            // }
+            foreach ($descargas as $key) {
+                $html3 .= '<tr>
+                               <td>'.$key->usuario.'</td>
+                               <td>'.$key->curso.'</td>
+                           </tr>';
+            }
+            foreach ($cursos as $key) {
+                $combo .= '<option value="'.$key->nombre.'">'.$key->nombre.'</option>';
+            }
             $data['table1'] = $html1;
             $data['table2'] = $html2;
             $data['table3'] = $html3;
+            $data['cursos'] = $combo;
             $this->load->view('admin/v_admin', $data);
         // }
 	}
@@ -75,11 +84,36 @@ class Reporte extends CI_Controller {
         try {
             $html1    = '';
             $idioma   = $this->input->post('idioma');
-            $ingresos = $this->M_correo->getIngresos($idioma);
-            foreach ($ingresos as $key) {
+            $curso    = $this->input->post('curso');
+            $usuarios = $this->M_correo->getAllUsers($idioma, $curso);
+            foreach ($usuarios as $key) {
                 $html1 .= '<tr>
                                <td>'.$key->Nombres.'</td>
-                               <td>'.$key->fecha.'</td>
+                               <td>'.$key->email.'</td>
+                               <td>'.$key->empresa.'</td>
+                               <td>'.$key->pais.'</td>
+                               <td></td>
+                           </tr>';
+            }
+            $data['html']  = $html1;
+            $data['error'] = EXIT_SUCCESS;
+        } catch (Exception $e){
+            $data['msj'] = $e->getMessage();
+        }
+        echo json_encode($data);
+    }
+
+    function descargaCursos () {
+        $data['error'] = EXIT_ERROR;
+        $data['msj']   = null;
+        try {
+            $html1    = '';
+            $curso    = $this->input->post('curso');
+            $usuarios = $this->M_correo->getDescargas($curso);
+            foreach ($usuarios as $key) {
+                $html1 .= '<tr>
+                               <td>'.$key->usuario.'</td>
+                               <td>'.$key->curso.'</td>
                            </tr>';
             }
             $data['html']  = $html1;

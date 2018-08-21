@@ -108,9 +108,8 @@
                             </div>
                             <div role="tabpanel" class="tab-pane" id="descargas">
                                 <div class="js-select">
-                                    <select class="selectpicker" id="curso"  name="curso" onchange="" title="Curso">
-                                        <option value="Español">Espa&ntilde;ol</option>
-                                        <option value="Portugues">Portugues</option>
+                                    <select class="selectpicker" id="descargaCurso"  name="descargaCurso" onchange="descargaCursos()" title="Curso">
+                                        <?php echo $cursos ?>
                                     </select>
                                 </div>
                                 <div class="table-responsive">

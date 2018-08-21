@@ -93,3 +93,22 @@ function usuarioIdiomaCurso() {
         }
     });
 }
+function descargaCursos() {
+    var curso  = $('#descargaCurso').val();
+    $.ajax({
+        data : { curso  : curso },
+        url  : 'reporte/descargaCursos',
+        type : 'POST'
+    }).done(function(data){
+        try{
+            data = JSON.parse(data);
+            if(data.error == 0){
+                $('#TableCurso').html(data.html);
+            }else {
+                return;
+            }
+        }catch(err){
+            msj('error',err.message);
+        }
+    });
+}
