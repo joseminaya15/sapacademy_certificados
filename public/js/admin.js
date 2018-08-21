@@ -58,13 +58,13 @@ function ingresoIdioma(){
     (idioma == '' ) ? 'es' : 'en'; 
     $.ajax({
         data : { idioma : idioma },
-        url  : 'admin/ingresoIdioma',
+        url  : 'reporte/ingresoIdioma',
         type : 'POST'
     }).done(function(data){
         try{
             data = JSON.parse(data);
             if(data.error == 0){
-                location.href = 'Login';
+                $().html(data.html);
             }else {
                 return;
             }

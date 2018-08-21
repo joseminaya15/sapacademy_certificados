@@ -52,8 +52,16 @@ class Reporte extends CI_Controller {
         $data['error'] = EXIT_ERROR;
         $data['msj']   = null;
         try {
+            $html1    = '';
             $idioma   = $this->input->post('idioma');
             $ingresos = $this->M_correo->getIngresos($idioma);
+            foreach ($ingresos as $key) {
+                $html1 .= '<tr>
+                               <td>'.$key->Nombres.'</td>
+                               <td>'.$key->fecha.'</td>
+                           </tr>';
+            }
+            $data['html']  = $html1;
             $data['error'] = EXIT_SUCCESS;
         } catch (Exception $e){
             $data['msj'] = $e->getMessage();
