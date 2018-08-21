@@ -58,8 +58,8 @@
                             <div role="tabpanel" class="tab-pane active" id="usuarios">
                                 <div class="js-select">
                                     <select class="selectpicker" id="usuarioIdioma"  name="usuarioIdioma" onchange="usuarioIdiomaCurso()" title="Idioma">
-                                        <option value="Español">Espa&ntilde;ol</option>
-                                        <option value="Portugues">Portugues</option>
+                                        <option value="es">Espa&ntilde;ol</option>
+                                        <option value="pt">Portugues</option>
                                     </select>
                                 </div>
                                 <div class="js-select">
@@ -88,8 +88,8 @@
                             <div role="tabpanel" class="tab-pane" id="ingresos">
                                 <div class="js-select">
                                     <select class="selectpicker" id="ingresoIdioma"  name="ingresoIdioma" onchange="ingresoIdioma()" title="Idioma">
-                                        <option value="Español">Espa&ntilde;ol</option>
-                                        <option value="Portugues">Portugues</option>
+                                        <option value="es">Espa&ntilde;ol</option>
+                                        <option value="pt">Portugues</option>
                                     </select>
                                 </div>
                                 <div class="table-responsive">

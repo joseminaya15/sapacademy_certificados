@@ -54,8 +54,7 @@ function cerrarCesion(){
   });
 }
 function ingresoIdioma(){
-    var idioma = ().val();
-    (idioma == '' ) ? 'es' : 'en'; 
+    var idioma = $('#ingresoIdioma').val();
     $.ajax({
         data : { idioma : idioma },
         url  : 'reporte/ingresoIdioma',
@@ -74,9 +73,8 @@ function ingresoIdioma(){
     });
 }
 function usuarioIdiomaCurso() {
-    var curso  = ().val();
-    var idioma = ().val();
-    (idioma == '' ) ? 'es' : 'en'; 
+    var curso  = $('#usuarioCurso').val();
+    var idioma = $('#usuarioIdioma').val();
     $.ajax({
         data : { idioma : idioma,
                  curso  : curso },
