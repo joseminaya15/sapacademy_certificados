@@ -68,7 +68,7 @@
                                     </select>
                                 </div>
                                 <div class="table-responsive">
-                                    <table id="TableUsuario" class="display nowrap table table-bordered table-hover dt-responsive js-table" cellspacing="0" width="100%">
+                                    <table id="TableUsuario" class="display table table-bordered table-hover dt-responsive js-table" cellspacing="0" width="100%">
                                         <thead>
                                             <tr class="tr-header-reporte">
                                                 <th class="text-left">Nombres</th>
@@ -92,7 +92,7 @@
                                     </select>
                                 </div>
                                 <div class="table-responsive">
-                                    <table id="TableIngreso" class="display nowrap table table-bordered table-hover dt-responsive js-table" cellspacing="0" width="100%">
+                                    <table id="TableIngreso" class="display table table-bordered table-hover dt-responsive js-table" cellspacing="0" width="100%">
                                         <thead>
                                             <tr class="tr-header-reporte">
                                                 <th class="text-left">Usuario</th>
@@ -112,7 +112,7 @@
                                     </select>
                                 </div>
                                 <div class="table-responsive">
-                                    <table id="TableCurso" class="display nowrap table table-bordered table-hover dt-responsive js-table" cellspacing="0" width="100%">
+                                    <table id="TableCurso" class="display table table-bordered table-hover dt-responsive js-table" cellspacing="0" width="100%">
                                         <thead>
                                             <tr class="tr-header-reporte">
                                                 <th class="text-left">Usuario</th>
