@@ -135,6 +135,15 @@ p
 			color #FFFFFF
 			font-family $medium
 			background-color transparent
+.js-input
+	margin 10px 0
+.js-button
+	background-color $default !important
+	color #FFFFFF
+	text-transform none
+	font-family $medium
+	padding 0 25px
+	border-radius 5px
 .js-container
 	transitionMaxWidth()
 	height 100%
@@ -213,12 +222,32 @@ p
 			justify-content flex-end
 			a
 				color $default
+.js-login
+	.mdl-card
+		max-width 320px
+		.mdl-card__title
+			h2
+				margin 10px 0
+				font-family $medium
+				color $default
+#login
+	background-color #F2F2F2
 footer
 	background-color #E9E9E9
 	p
 		text-align center
 		font-size 14px
 		font-family $light
+/*MATERIAL DESIGN LITE*/
+.mdl-card
+	box-shadow 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+	width 100%
+	.mdl-card__title
+		display block
+	.mdl-card__supporting-text
+		width 100%
+	.mdl-card__actions
+		padding 16px
 @media ( max-width : 600px)
 	.js-contenido
 		h2
