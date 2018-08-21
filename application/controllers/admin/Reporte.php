@@ -85,7 +85,8 @@ class Reporte extends CI_Controller {
             $html1    = '';
             $idioma   = $this->input->post('idioma');
             $curso    = $this->input->post('curso');
-            $usuarios = $this->M_correo->getAllUsers($idioma, $curso);
+            $idCurso  = $this->M_correo->getDatosCurso($curso);
+            $usuarios = $this->M_correo->getAllUsers($idioma, $idCurso[0]->id);
             foreach ($usuarios as $key) {
                 $html1 .= '<tr>
                                <td>'.$key->Nombres.'</td>

@@ -68,20 +68,19 @@ class M_correo extends  CI_Model{
         } else if ($idioma == 'pt') {
             $where .= 'AND p.id > 385';
         }
-        if($curso == null) {
-            $sql = "SELECT p.*
-                      FROM personas p ";
-        } else {
-            $sql = "SELECT p.*
-                      FROM personas p,
-                           persona_x_curso pc,
-                           cursos c,
-                           descarga d
-                    WHERE p.id = pc.id_persona
-                    --  AND p.id = d.id_persona
-                      AND c.id = pc.id_curso
-                      AND d.id_curso = ''";
-        }
+        if($curso != null) {
+            $where .= " AND pc.id_curso = ".$curso;
+        } 
+        $sql = "SELECT p.*,
+                       GROUP_CONCAT(c.nombre)
+                      -- GROUP_CONCAT(CONCAT_WS(':', Name, CAST(Value AS CHAR(7))) SEPARATOR ',') AS result
+                  FROM personas p,
+                       persona_x_curso pc,
+                       cursos c,
+                       descarga d
+                 WHERE p.id = pc.id_persona
+                   AND c.id = pc.id_curso"
+                   .$where;
         $result = $this->db->query($sql);
         return $result->result();
     }

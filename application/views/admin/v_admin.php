@@ -64,8 +64,7 @@
                                 </div>
                                 <div class="js-select">
                                     <select class="selectpicker" id="usuarioCurso"  name="usuarioCurso" onchange="usuarioIdiomaCurso()" title="Curso">
-                                        <option value="Español">Espa&ntilde;ol</option>
-                                        <option value="Portugues">Portugues</option>
+                                        <?php echo $cursos ?>
                                     </select>
                                 </div>
                                 <div class="table-responsive">
