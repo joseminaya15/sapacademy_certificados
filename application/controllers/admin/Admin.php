@@ -38,9 +38,9 @@ class Admin extends CI_Controller {
                                <td>'.$key->fecha.'</td>
                            </tr>';
             }
-            foreach ($descargas as $key) {
-                $html3 .= '';
-            }
+            // foreach ($descargas as $key) {
+            //     $html3 .= '';
+            // }
             $data['table1'] = $html1;
             $data['table2'] = $html2;
             $data['table3'] = $html3;
