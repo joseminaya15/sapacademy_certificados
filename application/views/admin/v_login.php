@@ -65,8 +65,8 @@
         <script src="<?php echo RUTA_JS?>admin.js?v=<?php echo time();?>"></script>
         <script type="text/javascript">
             // var URLactual = window.location;
-            // if(URLactual['href'] != 'http://www.sap-latam.com/SAP_Marketing_Academy/es/'){
-            //     location.href = 'http://www.sap-latam.com/SAP_Marketing_Academy/es/';
+            // if(URLactual['href'] != 'http://www.sap-latam.com/SAP_Marketing_Academy/admin/'){
+            //     location.href = 'http://www.sap-latam.com/SAP_Marketing_Academy/admin/';
             // }
             if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
                 $('select').selectpicker('mobile');
