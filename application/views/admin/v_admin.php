@@ -87,7 +87,7 @@
                             </div>
                             <div role="tabpanel" class="tab-pane" id="ingresos">
                                 <div class="js-select">
-                                    <select class="selectpicker" id="idioma"  name="idioma" onchange="" title="Idioma">
+                                    <select class="selectpicker" id="ingresoIdioma"  name="ingresoIdioma" onchange="ingresoIdioma()" title="Idioma">
                                         <option value="Español">Espa&ntilde;ol</option>
                                         <option value="Portugues">Portugues</option>
                                     </select>
