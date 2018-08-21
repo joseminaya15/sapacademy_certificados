@@ -80,7 +80,7 @@
                                             </tr>
                                         </thead>
                                       <tbody>
-                                          <!-- <?php echo $table1 ?>   -->
+                                          <?php echo $table1 ?>
                                       </tbody>
                                     </table>
                                 </div>
@@ -101,7 +101,7 @@
                                             </tr>
                                         </thead>
                                       <tbody>
-                                          <!-- <?php echo $table2 ?>   -->
+                                          <?php echo $table2 ?>
                                       </tbody>
                                     </table>
                                 </div>
@@ -122,7 +122,7 @@
                                             </tr>
                                         </thead>
                                       <tbody>
-                                          <!-- <?php echo $table3 ?>   -->
+                                          <?php echo $table3 ?>
                                       </tbody>
                                     </table>
                                 </div>
