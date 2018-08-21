@@ -39,7 +39,7 @@
                     <div class="mdl-card__title">
                         <div class="js-flex">
                             <div class="js-flex__left">
-                                <h2>Administrador</h2>
+                                <p>Administrador</p>
                             </div>
                             <div class="js-flex__right">
                                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="cerrarCesion()">Cerrar Sesi&oacute;n</button>
