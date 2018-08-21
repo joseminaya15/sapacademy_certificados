@@ -73,3 +73,24 @@ function ingresoIdioma(){
         }
     });
 }
+function usuarioIdiomaCurso() {
+    var curso  = ().val();
+    var idioma = ().val();
+    (idioma == '' ) ? 'es' : 'en'; 
+    $.ajax({
+        data : { idioma : idioma,
+                 curso  : curso },
+        url  : 'reporte/usuarioIdiomaCurso',
+        type : 'POST'
+    }).done(function(data){
+        try{
+            data = JSON.parse(data);
+            if(data.error == 0){
+                $().html(data.html);
+            }else {
+                return;
+            }
+        }catch(err){
+            msj('error',err.message);
+        }
+}
