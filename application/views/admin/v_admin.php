@@ -16,6 +16,8 @@
         <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>bootstrap-select/css/bootstrap-select.min.css?v=<?php echo time();?>">
         <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>bootstrap/bootstrap.min.css?v=<?php echo time();?>">
         <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>mdl/material.min.css?v=<?php echo time();?>">
+        <link rel="stylesheet"    href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet"    href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.bootstrap.min.css">
         <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>font-awesome.min.css?v=<?php echo time();?>">
         <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>material-icons.css?v=<?php echo time();?>">
         <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>benton.css?v=<?php echo time();?>">
@@ -38,7 +40,93 @@
                         
                     </div>
                     <div class="mdl-card__supporting-text">
-                        
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="active"><a href="#usuarios" aria-controls="usuarios" role="tab" data-toggle="tab">Usuarios</a></li>
+                            <li><a href="#ingresos" aria-controls="ingresos" role="tab" data-toggle="tab">Ingresos</a></li>
+                            <li><a href="#descargas" aria-controls="descargas" role="tab" data-toggle="tab">Descargas</a></li>
+                            <li><a href="#reporte2017" aria-controls="reporte2017" role="tab" data-toggle="tab">Reportes 2017</a></li>
+                            <li><a href="#reporte2018" aria-controls="reporte2018" role="tab" data-toggle="tab">Reportes 2018</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="usuarios">
+                                <div class="js-select">
+                                    <select class="selectpicker" id="idioma"  name="idioma" onchange="" title="Idioma">
+                                        <option value="Español">Espa&ntilde;ol</option>
+                                        <option value="Portugues">Portugues</option>
+                                    </select>
+                                </div>
+                                <div class="js-select">
+                                    <select class="selectpicker" id="curso"  name="curso" onchange="" title="Curso">
+                                        <option value="Español">Espa&ntilde;ol</option>
+                                        <option value="Portugues">Portugues</option>
+                                    </select>
+                                </div>
+                                <div class="table-responsive">
+                                    <table id="TableUsuario" class="display nowrap table table-bordered table-hover dt-responsive js-table" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr class="tr-header-reporte">
+                                                <th class="text-left">Nombres</th>
+                                                <th class="text-left">E-mail</th>
+                                                <th class="text-left">Empresa</th>
+                                                <th class="text-left">Pa&iacute;s</th>
+                                                <th class="text-left">Cursos descargados</th>
+                                            </tr>
+                                        </thead>
+                                      <tbody>
+                                          <!-- <?php echo $html ?>   -->
+                                      </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="ingresos">
+                                <div class="js-select">
+                                    <select class="selectpicker" id="idioma"  name="idioma" onchange="" title="Idioma">
+                                        <option value="Español">Espa&ntilde;ol</option>
+                                        <option value="Portugues">Portugues</option>
+                                    </select>
+                                </div>
+                                <div class="table-responsive">
+                                    <table id="TableIngreso" class="display nowrap table table-bordered table-hover dt-responsive js-table" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr class="tr-header-reporte">
+                                                <th class="text-left">Usuario</th>
+                                                <th class="text-left">Fecha de Ingreso</th>
+                                            </tr>
+                                        </thead>
+                                      <tbody>
+                                          <!-- <?php echo $html ?>   -->
+                                      </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="descargas">
+                                <div class="js-select">
+                                    <select class="selectpicker" id="curso"  name="curso" onchange="" title="Curso">
+                                        <option value="Español">Espa&ntilde;ol</option>
+                                        <option value="Portugues">Portugues</option>
+                                    </select>
+                                </div>
+                                <div class="table-responsive">
+                                    <table id="TableCurso" class="display nowrap table table-bordered table-hover dt-responsive js-table" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr class="tr-header-reporte">
+                                                <th class="text-left">Usuario</th>
+                                                <th class="text-left">Curso</th>
+                                            </tr>
+                                        </thead>
+                                      <tbody>
+                                          <!-- <?php echo $html ?>   -->
+                                      </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="reporte2017">
+                                
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="reporte2018">
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -50,14 +138,41 @@
         <script src="<?php echo RUTA_PLUGINS?>bootstrap-select/js/i18n/defaults-es_ES.min.js?v=<?php echo time();?>"></script>
         <script src="<?php echo RUTA_PLUGINS?>mdl/material.min.js?v=<?php echo time();?>"></script>
         <script src="<?php echo RUTA_PLUGINS?>toaster/toastr.js?v=<?php echo time();?>"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.colVis.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
         <script src="<?php echo RUTA_JS?>Utils.js?v=<?php echo time();?>"></script>
-        <script src="<?php echo RUTA_JS?>login.js?v=<?php echo time();?>"></script>
+        <script src="<?php echo RUTA_JS?>admin.js?v=<?php echo time();?>"></script>
         <script type="text/javascript">
             if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
                 $('select').selectpicker('mobile');
             } else {
                 $('select').selectpicker();
             }
+            $(document).ready(function() {
+                $('.js-table').DataTable( {
+                    searching : false,
+                    responsive: true,
+                    dom: 'Bfrtip',
+                    aLengthMenu : [20],
+                    buttons: [
+                        {
+                            extend:'excel',
+                            text: 'Exportar a Excel'
+                        }
+                    ],
+                    language : {
+                        info : "Mostrando _TOTAL_ registros",
+                    }
+                });
+            });
         </script>
     </body>
 </html>
