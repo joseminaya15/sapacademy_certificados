@@ -63,7 +63,7 @@ function ingresoIdioma(){
         try{
             data = JSON.parse(data);
             if(data.error == 0){
-                $().html(data.html);
+                $('#TableIngreso').html(data.html);
             }else {
                 return;
             }
@@ -84,7 +84,7 @@ function usuarioIdiomaCurso() {
         try{
             data = JSON.parse(data);
             if(data.error == 0){
-                $().html(data.html);
+                $('#TableUsuario').html(data.html);
             }else {
                 return;
             }

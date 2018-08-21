@@ -128,10 +128,10 @@
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="reporte2017">
-                                
+                                <iframe src="http://104.236.53.199/sapreportes/sap/report/2017"></iframe>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="reporte2018">
-                                
+                                <iframe src="http://104.236.53.199/sapreportes/sap/report/2018"></iframe>
                             </div>
                         </div>
                     </div>
